@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ePi - Inicio</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        a {
+            color:whitesmoke;
+        }
+        a:hover {
+            color:grey;
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        article a {
+            color:rgb(31, 31, 31);
+            text-decoration: none;
+        }
+        a:hover {
+            color:rgb(118, 118, 118);
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        .last-relase-panel {
+            padding:24px;
+            background-color: rgba(0,0,0,0.8);
+            color:whitesmoke;
+            width: 300px;
+            float:left;
+            margin-left: 5px;
+        }
+        .last-relase-panel:first {
+            padding:24px;
+            background-color: rgba(0,0,0,0.8);
+            color:whitesmoke;
+            width: 300px;
+            float:left;
+            margin-left:0px!important;
+        }
+        .last-relase-panel h3 {
+            margin-top: 5px;
+        }
+        footer {
+            padding: 20px;
+            background-color: rgb(44, 44, 44);
+            height: 150px;
+            position:fixed;
+            bottom: 0;
+            right: 0;
+            left:0;
+        }
+        footer * {
+            background-color: rgb(44, 44, 44);
+        }
+        footer ul {
+            list-style-type: none;
+            color:aliceblue
+        }
+        code {
+            padding:6px;
+            color:aliceblue;
+            background-color: rgba(0,0,0,0.8);
+            font-family: monospace;
+            margin: 5px 0px 5px 0px;
+            display: inline-block;
+        }
+        [list] p:not([reference]) {
+            color:rgb(53, 53, 53);
+        }
+        [list] p:not([reference]):hover {
+            color:grey;
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        body {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        li {
+            height: fit-content;
+        }
+        [list] {
+            position: fixed;
+        }
+        #container {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body style="margin:0">
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;left:0;right:0;">
+        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">Docs</div>
+        <a style="float:right;padding:6px;font-size:15px" href="https://github.com/eLiteEs/epi">GitHub</a>
+    </header>
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;top:30px;left:0;right:0;">
+        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">epi</div>
+        <a style="padding:6px;font-size:15px" href="index.html">Inicio</a>
+        <a style="padding:6px;font-size:15px" href="download.html">Download</a>
+    </header>
+    <article style="padding:12px;position:absolute ;top: 60px;z-index: -1;">
+        <div style="padding-left: 12px;">
+            <div style="width: 100px;float:left" list>
+                <p onclick="showOne('i1')">Start</p>
+                <p onclick="showOne('i2')">Install epi</p>
+                <p reference>References —</p>
+                <p onclick="showOne('i3')">print</p>
+                <p onclick="showOne('i4')">cmos</p>
+                <p onclick="showOne('i5')">in</p>
+                <p onclick="showOne('i6')">var</p>
+                <p onclick="showOne('i7')">File Work</p>
+                <p onclick="showOne('i8')">Time</p>
+            </div>
+            <div id="container" style="float: left;width: fit-content; padding: 10px;max-width: 75%;">
+                <div id="i1">
+                    <h3>Documents</h3>
+                    <p>Here you can view some tutorials of how to code in epi.</p>
+                </div>
+                <div id="i2">
+                    <h3>Installation</h3>
+                    <p>In this tutorial you will learn hos to download epi.</p>
+                    <ol>
+                        <li>Download epi: Here you have the download <a href="download.html">link</a>.</li>
+                        <li>
+                            If you downloaded the compiler file:
+                            <ol>
+                                <li>Move the downloaded file to a new directory</li>
+                                <li>Copy the new directory direction. (ex: C:/users/cat/desktop/epi/)</li>
+                                <li>Edit the all users path variable and add the directory</li>
+                            </ol>
+                            If you downloaded the installer:
+                            <ol>
+                                <li>Open the installer.</li>
+                                <li>Select with which priivleges install epi</li>
+                                <li>Select a language</li>
+                                <li>Read and accept license.</li>
+                                <li>Read information about install.</li>
+                                <li>Click install</li>
+                                <li>Installed, click on "Run epi and close" to add epi to path variables.</li>
+                                <li>Now you have installed epi!</li>
+                            </ol>
+                        </li>
+                        <li>Create a new file on Visual Studio Code(<sup>(R)</sup>Microsoft) or your text editor.</li>
+                        <li>Write on it:<br><code>print("hello world!")</code></li>
+                        <li>Save the file as "helloworld.epi"</li>
+                        <li>On CMD/Powershell input <code>epi helloworld.epi</code></li>
+                        <li>It should run well, if it don't, repeat the installation process</li>
+                    </ol>
+                </div>
+                <div id="i3">
+                    <h3>Print</h3>
+                    <p><code>print</code> function gets the content inside the <code>()</code> and shows it on the screen.</p>
+                    <p>Added in: v_0.1</p>
+                    <blockText>
+                        <h3>Usage on v_0.1^</h3>
+                        <code>print(textToPrint)</code>
+                        <p>Example: <code>print("Hello World")</code></p>
+                        <p>Output:</p>
+                        <code>
+                            Hello World
+                        </code>
+                    </block>
+                </div>
+                <div id="i4">
+                    <h3>Cmos</h3>
+                    <p><code>cmos</code> is a function that runs a specified command on command prompt.</p>
+                    <p>Added in: v_0.1</p>
+                    <blockText>
+                        <h3>Usage on v_0.1^</h3>
+                        <code>cmos.commandToRun(args)</code>
+                        <p>Example: <code>cmos.gcc("--version")</code></p>
+                        <p>Output:</p>
+                        <code>gcc.exe (Rev6, Built by MSYS2 project) 13.1.0<br>
+                            Copyright (C) 2023 Free Software Foundation, Inc.<br>
+                            This is free software; see the source for copying conditions.  There is NO<br>
+                            warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</code>
+                    </block>
+                </div>
+                <div id="i5">
+                    <h3>In</h3>
+                    <p><code>in</code> is a comamnd to get a user input.</p>
+                    <p>Added in: v_0.1</p>
+                    <blockText>
+                        <h3>Usage on v_0.1^</h3>
+                        <code>in(message, (variable)saveIn)</code>
+                        <p>Example: <br><code>var username null<br>in("Enter username: ", "username")</code></p>
+                        <p>Output:</p>
+                        <code>Enter username: ▮</code>
+                    </block>
+                </div>
+                <div id="i6">
+                    <h3>Var</h3>
+                    <p><code>var</code> command works for store information as a string.</p>
+                    <p>Added in: v_0.1</p>
+                    <blockText>
+                        <h3>Usage on v_0.1^</h3>
+                        <code>var name value</code>
+                        <p>Example: <code>var user null</code></p>
+                        <p>It can be called by <code>var(varName)</code>. The varName should be without ""</p>
+                        <p>Output:</p>
+                        <code>no-output</code>
+                    </block>
+                </div>
+                <div id="i7">
+                    <h3>File Working</h3>
+                    <p><code>openf</code>, <code>readf</code>, <code>writf</code> and <code>relif</code> commands works for working with files.</p>
+                    <p>Added in: v_0.2</p>
+                    <blockText>
+                        <h3>Usage on v_0.2</h3>
+                        <code>// Create the file variable<br>var file null<br>// Open the file<br>openf("file", "filename.txt")<br>// Use your code as normal</code>
+                        <h4>Creating and writing files:</h4>
+                        <p>Example: <br><code>//Create the file variable<br>var file null<br>//Open the file<br>openf("file", "hello.txt")<br>//Write on the file<br>writf("file", "This is hello.txt file contents!")</code></p>
+                        <p>Output:</p>
+                        <code>no-output</code>
+                        <h4>Reading files:</h4>
+                        <p>Example: <br><code>//Create the file variable<br>var file null<br>//Open the file<br>openf("file", "hello.txt")<br>//Create the veriable in where we're going to save the text<br>var txt null<br>//Read file and save it<br>readf("file", "txt")<br>//Print the result<br>print(var(txt))</code></p>
+                        <p>Output:</p>
+                        <code>This is hello.txt file contents!</code>
+                        <h4>Reading a specific line on files:</h4>
+                        <p>Example: <br><code>//Create the file variable<br>var file null<br>//Open the file<br>openf("file", "hello.txt")<br>//Write a multiline text on file<br>writf("file", "hola\nque\ntal")<br>//Create the veriable in where we're going to save the text<br>var txt null<br>//Read the line 2 and save it<br>relif("file", "txt", 2)<br>//Print the result<br>print(var(txt))</code></p>
+                        <p>Output:</p>
+                        <code>que</code>
+                    </block>
+                </div>
+                <div id="i8">
+                    <h3>Time</h3>
+                    <p><code>gettMinutes</code>, <code>gettHours</code>, <code>gettSeconds</code>, <code>gettMilliseconds</code>, <code>gettDay</code>, <code>gettMonth</code> and <code>gettYear</code> commands works for getting actual time.</p>
+                    <p>Added in: v_0.2</p>
+                    <blockText>
+                        <h3>Usage on v_0.2</h3>
+                        <code>var minutes null<br>gettMinutes("minutes")<br>print(var(minutes))</code>
+                        <p>Output:</p>
+                        <code onload="document.querySelector('#i8 > blocktext > code:nth-child(4)').innerHTML = new Date().getMinutes()"></code>
+                        <h4>Getting seconds, minutes and hours like this: HH:MM.SS</h4>
+                        <code>//Create the variables which store the time<br>var hours null<br>var minutes null<br>var seconds null<br>//Get the time and set it to the variables<br>gettHours("hours")<br>gettMinutes("minutes")<br>gettSeconds("seconds")<br>//Print it on the specific format<br>print(var(hours) + ":" + var(minutes) + "." + var(seconds))</code>
+                        <p>Output:</p>
+                        <code></code>
+                        <h4>Getting day, month and year like this: DD/MM/YYYY</h4>
+                        <code>//Create the variables which store the time<br>var day null<br>var month null<br>var year null<br>//Get the time and set it to the variables<br>gettDay("day")<br>gettMonth("month")<br>gettYear("year")<br>//Print it on the specific format<br>print(var(day) + "/" + var(month) + "/" + var(year))</code>
+                        <p>Output:</p>
+                        <code></code>
+                    </block>
+                </div>
+            </div>
+        </div>
+        <div style="height: 170px;clear: both;"></div>
+    </article>
+    <footer>
+        <div style="float: left;">
+            <ul>
+                <li>eLite Proyect (c) 2023</li>
+                <li>epi (c) 2023</li>
+                <li>eDK (c) 2023</li>
+                <li>elmo (c) 2023</li>
+            </ul>
+        </div>
+        <div style="float:right">
+            <ul>
+                <li>Contact: <a href="mailto:lite.atencionalcliente@gmail.com">lite.atencionalcliente@gmail.com</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script>
+        function showOne(id) {
+            document.querySelectorAll("#container div").forEach(elem => elem.style.display = "none");
+            document.getElementById(id).style.display = "";
+        }
+
+        if(document.location.hash != "") {
+            showOne(document.location.hash.substr(1));
+        }
+
+        document.querySelectorAll("#container div").forEach(div => div.style.display = "none");
+        document.getElementById("i1").style.display = "";
+        document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
+        document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
+        document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
+
+    </script>
+</body>
+</html>
