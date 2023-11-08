@@ -113,6 +113,11 @@
                 <p onclick="showOne('i6')">var</p>
                 <p onclick="showOne('i7')">File Work</p>
                 <p onclick="showOne('i8')">Time</p>
+                <p onclick="showOne('i9')">Import</p>
+                <p onclick="showOne('i10')">Get Char</p>
+                <p onclick="showOne('i11')">Print C.</p>
+                <p onclick="showOne('i12')">Networking</p>
+                <p onclick="showOne('i13')">Functions</p>
             </div>
             <div id="container" style="float: left;width: fit-content; padding: 10px;max-width: 75%;">
                 <div id="i1">
@@ -139,8 +144,8 @@
                                 <li>Read and accept license.</li>
                                 <li>Read information about install.</li>
                                 <li>Click install</li>
-                                <li>Installed, now add epi path to path variables: "C:\Program Files (x86)\epi-0.2\epi.exe"</li>
-                                <li>Now epi is installed!</li>
+                                <li>Installed, click on "Run epi and close" to add epi to path variables.</li>
+                                <li>Now you have installed epi!</li>
                             </ol>
                         </li>
                         <li>Create a new file on Visual Studio Code(<sup>(R)</sup>Microsoft) or your text editor.</li>
@@ -190,6 +195,7 @@
                         <p>Output:</p>
                         <code>Enter username: ▮</code>
                     </block>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You can use <code>printc</code> for no new-line print. For epi v_0.3^</p>  
                 </div>
                 <div id="i6">
                     <h3>Var</h3>
@@ -209,7 +215,7 @@
                     <p><code>openf</code>, <code>readf</code>, <code>writf</code> and <code>relif</code> commands works for working with files.</p>
                     <p>Added in: v_0.2</p>
                     <blockText>
-                        <h3>Usage on v_0.2</h3>
+                        <h3>Usage on v_0.2^</h3>
                         <code>// Create the file variable<br>var file null<br>// Open the file<br>openf("file", "filename.txt")<br>// Use your code as normal</code>
                         <h4>Creating and writing files:</h4>
                         <p>Example: <br><code>//Create the file variable<br>var file null<br>//Open the file<br>openf("file", "hello.txt")<br>//Write on the file<br>writf("file", "This is hello.txt file contents!")</code></p>
@@ -230,7 +236,7 @@
                     <p><code>gettMinutes</code>, <code>gettHours</code>, <code>gettSeconds</code>, <code>gettMilliseconds</code>, <code>gettDay</code>, <code>gettMonth</code> and <code>gettYear</code> commands works for getting actual time.</p>
                     <p>Added in: v_0.2</p>
                     <blockText>
-                        <h3>Usage on v_0.2</h3>
+                        <h3>Usage on v_0.2^</h3>
                         <code>var minutes null<br>gettMinutes("minutes")<br>print(var(minutes))</code>
                         <p>Output:</p>
                         <code onload="document.querySelector('#i8 > blocktext > code:nth-child(4)').innerHTML = new Date().getMinutes()"></code>
@@ -242,6 +248,99 @@
                         <code>//Create the variables which store the time<br>var day null<br>var month null<br>var year null<br>//Get the time and set it to the variables<br>gettDay("day")<br>gettMonth("month")<br>gettYear("year")<br>//Print it on the specific format<br>print(var(day) + "/" + var(month) + "/" + var(year))</code>
                         <p>Output:</p>
                         <code></code>
+                    </block>
+                </div>
+                <div id="i9">
+                    <h3>Import Functions</h3>
+                    <p>epi uses a special command to import libraries.</p>
+                    <p>You can use this command to import yours java or executables files and run it on epi.</p>
+                    <p>To edit the commands you edit the file in the epi main folder. (imp.epilib)</p>
+                    <p>Added in: v_0.3</p>
+                    <blockText>
+                        <h3>Usage on v_0.3</h3>
+                        <p>epilibpath/imp.epilib</p>
+                        <code>;printText;echo;</code>
+                        <p>main.epi</p>
+                        <code>var output null<br>printText("hi", "output")<br>print(var(output))</code>
+                        <p>cmd:</p>
+                        <code>epi main.epi</code>
+                        <p>powershell (not path setuped):</p>
+                        <code>.\epi main.epi</code>
+                        <p>Syntax</p>
+                        <code>epi main.epi</code><span> &lt; This sets the file to compile.</span><br>
+                        <p>Output:</p>
+                        <code>hi</code>        
+                    </block>
+                    </div>
+                <div id="i10">
+                    <h3>Get Char</h3>
+                    <p>You can use <code>getcha</code> function to get a pressed button by the user.</p>
+                    <p>Added in: v_0.3</p>
+                    <blockText>
+                        <h3>Usage on v_0.3</h3>
+                        <code>var key null<br>getcha("key")<br>print("User pressed: " + var(key))</code>
+                        <p>Output:</p>
+                        <code>h▮<br>User pressed: h</code>        
+                    </block>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You can use <code>printc</code> for no new-line print.</p>    
+                </div>
+                <div id="i11">
+                    <h3>Print Compact</h3>
+                    <p>You can use <code>printc</code> for putting no new-line after print.</p>
+                    <p>Added in: v_0.3</p>
+                    <blockText>
+                        <h3>Usage on v_0.3</h3>
+                        <code>var key null<br>printc("Press key: ")<br>getcha("key")</code>
+                        <p>Output:</p>
+                        <code>Press key: ▮</code>        
+                    </block>
+                </div>
+                <div id="i12">
+                    <h3>Networking</h3>
+                    <p>In v_0.3, there is a way to import files made up in java. So intallation of v_0.3 includes some files to send messages to servera or recieve mesasges. You can use <code>netw.createServer</code> and <code>netw.createConection</code>.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                    <p>Added in: v_0.3</p>
+                    <blockText>
+                        <h3>Usage on v_0.3</h3>
+                        <h4>Create a Server to Recieve Text</h4>
+                        <p>main.epi</p>
+                        <code>var data null<br>
+                            netw.createServer("2288", "data")<br>
+                            print(var(data))</code>
+                        <p><code>netw.createServer</code> Syntax:</p>
+                        <code>netw.createServer</code><span> &lt;- Create the server</span><br>
+                        <code>"2288"</code><span> &lt;- Select the port where we're going to create the server</span><br>
+                        <code>"data"</code><span> &lt;- Where to save the recieved text.</span><br>
+                        <hr>
+                        <h4>Create a Connection and Send Text</h4>
+                        <p>sub.epi</p>
+                        <code>var data null<br>
+                            netw.createConection("2288 supersecretip hi", "data")<br>
+                            print(var(data))</code>
+                        <p><code>netw.createConection</code> Syntax:</p>
+                        <code>netw.createServer</code><span> &lt;- Create the server</span><br>
+                        <code>2288</code><span> &lt;- Select the port where we're going to connect.</span><br>
+                        <code>supersecretip</code><span> &lt;- The ip of the server where we want to connect.</span><br>
+                        <code>hi</code><span> &lt;- Text to send.</span><br>
+                        <hr>
+                        <p><code>main.epi</code> Output:</p>
+                        <code>hi</code>
+                    </block>
+                </div>
+                <div id="i13">
+                    <h3>Function</h3>
+                    <p>For creating functions you can create them by using <code>openFunction</code>, <code>closeFunction</code> and <code>runFunction</code>.</p>
+                    <p>Added in: v_0.3</p>
+                    <blockText>
+                        <h3>Usage on v_0.3</h3>
+                        <p><code>main.epi</code> File:</p>
+                        <code>var function null<br>
+                            openFunction("function")<br>
+                            print("hi")<br>
+                            closeFunction()<br>
+                            runFunction("function")</code>
+                        <p>Output:</p>
+                        <code>hi</code>
                     </block>
                 </div>
             </div>
@@ -275,7 +374,7 @@
         }
 
         document.querySelectorAll("#container div").forEach(div => div.style.display = "none");
-        document.getElementById("i1").style.display = "";
+        document.getElementById("i13").style.display = "";
         document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
         document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
         document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
