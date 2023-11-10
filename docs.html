@@ -103,7 +103,7 @@
     </header>
     <article style="padding:12px;position:absolute ;top: 60px;z-index: -1;">
         <div style="padding-left: 12px;">
-            <div style="width: 100px;float:left" list>
+            <div style="width: 100px;float:left;max-height: calc(100% - (150px + 60px + 50px)); overflow-y: scroll;" list>
                 <p onclick="showOne('i1')">Start</p>
                 <p onclick="showOne('i2')">Install epi</p>
                 <p reference>References —</p>
@@ -118,11 +118,15 @@
                 <p onclick="showOne('i11')">Print C.</p>
                 <p onclick="showOne('i12')">Networking</p>
                 <p onclick="showOne('i13')">Functions</p>
+                <p onclick="showOne('i14')">Dialogs</p>
+                <p onclick="showOne('i15')">Loops</p>
             </div>
             <div id="container" style="float: left;width: fit-content; padding: 10px;max-width: 75%;">
                 <div id="i1">
                     <h3>Documents</h3>
                     <p>Here you can view some tutorials of how to code in epi.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Recomended version: v_0.4 or higher. It has important bugfix, implementations, and accesibility.</p>    
+                    
                 </div>
                 <div id="i2">
                     <h3>Installation</h3>
@@ -144,7 +148,8 @@
                                 <li>Read and accept license.</li>
                                 <li>Read information about install.</li>
                                 <li>Click install</li>
-                                <li>Installed, click on "Run epi and close" to add epi to path variables.</li>
+                                <li>Installed, click on "Run epi and close".</li>
+                                <li>Add the installation path to your user variables.</li>
                                 <li>Now you have installed epi!</li>
                             </ol>
                         </li>
@@ -195,8 +200,7 @@
                         <p>Output:</p>
                         <code>Enter username: ▮</code>
                     </block>
-                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You can use <code>printc</code> for no new-line print. For epi v_0.3^</p>  
-                </div>
+                   </div>
                 <div id="i6">
                     <h3>Var</h3>
                     <p><code>var</code> command works for store information as a string.</p>
@@ -257,27 +261,26 @@
                     <p>To edit the commands you edit the file in the epi main folder. (imp.epilib)</p>
                     <p>Added in: v_0.3</p>
                     <blockText>
-                        <h3>Usage on v_0.3</h3>
-                        <p>epilibpath/imp.epilib</p>
+                        <h3>Usage on v_0.3^</h3>
+                        <p>C:/Program Files(x86)/epi-v_yourepiversion/imp.epilib</p>
                         <code>;printText;echo;</code>
+                        <p>Syntax</p>
+                        <p>;<b>printText</b>;echo; Name to call the function</p>
+                        <p>;printText;<b>echo</b>; Command to run</p>
                         <p>main.epi</p>
                         <code>var output null<br>printText("hi", "output")<br>print(var(output))</code>
                         <p>cmd:</p>
                         <code>epi main.epi</code>
-                        <p>powershell (not path setuped):</p>
-                        <code>.\epi main.epi</code>
-                        <p>Syntax</p>
-                        <code>epi main.epi</code><span> &lt; This sets the file to compile.</span><br>
                         <p>Output:</p>
                         <code>hi</code>        
                     </block>
-                    </div>
+                </div>
                 <div id="i10">
                     <h3>Get Char</h3>
                     <p>You can use <code>getcha</code> function to get a pressed button by the user.</p>
                     <p>Added in: v_0.3</p>
                     <blockText>
-                        <h3>Usage on v_0.3</h3>
+                        <h3>Usage on v_0.3^</h3>
                         <code>var key null<br>getcha("key")<br>print("User pressed: " + var(key))</code>
                         <p>Output:</p>
                         <code>h▮<br>User pressed: h</code>        
@@ -289,7 +292,7 @@
                     <p>You can use <code>printc</code> for putting no new-line after print.</p>
                     <p>Added in: v_0.3</p>
                     <blockText>
-                        <h3>Usage on v_0.3</h3>
+                        <h3>Usage on v_0.3^</h3>
                         <code>var key null<br>printc("Press key: ")<br>getcha("key")</code>
                         <p>Output:</p>
                         <code>Press key: ▮</code>        
@@ -301,7 +304,7 @@
                     <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
                     <p>Added in: v_0.3</p>
                     <blockText>
-                        <h3>Usage on v_0.3</h3>
+                        <h3>Usage on v_0.3^</h3>
                         <h4>Create a Server to Recieve Text</h4>
                         <p>main.epi</p>
                         <code>var data null<br>
@@ -332,7 +335,7 @@
                     <p>For creating functions you can create them by using <code>openFunction</code>, <code>closeFunction</code> and <code>runFunction</code>.</p>
                     <p>Added in: v_0.3</p>
                     <blockText>
-                        <h3>Usage on v_0.3</h3>
+                        <h3>Usage on v_0.3^</h3>
                         <p><code>main.epi</code> File:</p>
                         <code>var function null<br>
                             openFunction("function")<br>
@@ -341,6 +344,60 @@
                             runFunction("function")</code>
                         <p>Output:</p>
                         <code>hi</code>
+                    </block>
+                </div>
+                <div id="i14">
+                    <h3>Dialogs</h3>
+                    <p>You can create dialogs to warn the user of something visually or getting userinput.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+            
+                    <p>Added in: v_0.rev1</p>
+                    <blockText>
+                        <h3>Usage on v_0.rev1^</h3>
+                        <h4>Create Normal Dialogs</h4>
+                        <p>There are three types of dialogs:<br><code>showMessage</code> A dialog with an info icon<br><code>showWarning</code> A dialog with an warning icon<br><code>showError</code> A dialog with an error icon</p>
+                        <p>Here is the use:</p>
+                        <h5><code>showMessage</code>:</h5>
+                        <code>var output null<br>// output variable might be required to trobleshotign<br>gui.showMessage("message title", "output")</code>
+                        <p>Output:</p>
+                        <img src="img1.png">
+                        <h5><code>showWarning
+                        </code>:</h5>
+                        <code>var output null<br>// output variable might be required to trobleshotign<br>gui.showWarning("message title", "output")</code>
+                        <p>Output:</p>
+                        <img src="img2.png">
+                        <h5><code>showError
+                        </code>:</h5>
+                        <code>var output null<br>// output variable might be required to trobleshotign<br>gui.showError("message title", "output")</code>
+                        <p>Output:</p>
+                        <img src="img3.png">
+                        <h4>Create UserInput Dialogs</h4>
+                        <code>
+                            var username null<br>
+                            // You can't enter spaces on dialogs (maybe later yes) *username variable stores the entered text<br>
+                            gui.requestInput("Username Login", "username")<br>
+                            print(var(username))
+                        </code>
+                        <p>Output:</p>
+                        <img src="img4.png">
+                    </block>
+                </div>
+                <div id="i15">
+                    <h3>Loops</h3>
+                    <p>In epi there's a way to do loops, but you have to determinate how much times repeat it.</p>
+                    <p>Added in: v_0.rev1</p>
+                    <blockText>
+                        <h3>Usage on v_0.rev1^</h3>
+                        <p><code>main.epi</code> File:</p>
+                        <code>//First define function<br>var function null<br>
+                            openFunction("function")<br>
+                            print("hi")<br>
+                            closeFunction()<br>
+                            runFunction("function")<br>
+                            // now use this<br>
+                            repeatTim("function", 10)</code>
+                        <p>Output:</p>
+                        <code>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br></code>
                     </block>
                 </div>
             </div>
@@ -374,7 +431,7 @@
         }
 
         document.querySelectorAll("#container div").forEach(div => div.style.display = "none");
-        document.getElementById("i13").style.display = "";
+        document.getElementById("i1").style.display = "";
         document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
         document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
         document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
