@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ePi - Download</title>
+    <title>ePi - Docs</title>
     <style>
         * {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -48,10 +48,10 @@
             padding: 20px;
             background-color: rgb(44, 44, 44);
             height: 150px;
-            position: fixed;
+            position:fixed;
             bottom: 0;
+            right: 0;
             left:0;
-            right:0;
         }
         footer * {
             background-color: rgb(44, 44, 44);
@@ -60,24 +60,87 @@
             list-style-type: none;
             color:aliceblue
         }
+        code {
+            padding:6px;
+            color:aliceblue;
+            background-color: rgba(0,0,0,0.8);
+            font-family: monospace;
+            margin: 5px 0px 5px 0px;
+            display: inline-block;
+        }
+        [list] p:not([reference]) {
+            color:rgb(53, 53, 53);
+        }
+        [list] p:not([reference]):hover {
+            color:grey;
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        body {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        li {
+            height: fit-content;
+        }
+        [list] {
+            position: fixed;
+        }
+        #container {
+            margin-left: 100px;
+        }
+        .comment {
+            color: green; /* Change the color to your desired one */
+        }
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
     </style>
 </head>
 <body style="margin:0">
-    <header style="background-color: rgba(0,0,0,0.9); height: 30px;">
-        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">Thanks</div>
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;left:0;right:0;">
+        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">Deprecated</div>
         <a style="float:right;padding:6px;font-size:15px" href="https://github.com/eLiteEs/epi">GitHub</a>
     </header>
-    <header style="background-color: rgba(0,0,0,0.9); height: 30px;">
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;top:30px;left:0;right:0;">
         <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">epi</div>
         <a style="padding:6px;font-size:15px" href="index.html">Inicio</a>
         <a style="padding:6px;font-size:15px" href="download.html">Download</a>
         <a style="padding:6px;font-size:15px" href="docs.html">Docs</a>
-        <a style="padding:6px;font-size:15px" href="deprecated.html">Deprecated</a>
         <a style="padding:6px;font-size:15px" href="relasenotes.html">Relase Notes</a>
     </header>
-    <article style="padding:12px">
-        <h1>Thanks for downloading!</h1>
-        <p>Now you can check our installation guides and how to code in epi in ours <a href="docs.html"> documents</a>.</p>
+    <article style="padding:12px;position:absolute ;top: 60px;z-index: -1;">
+        <div style="padding-left: 12px;">
+            <h3>What are deprecated functions?</h3>
+            <p>Deprecated functions are functions that doesn't work in newer or can be used with less code.</p>
+            <h3>Deprecated functions:</h3>
+            <div style="padding-left: 12px;">
+                <h4><code>setva()</code> :</h4>
+                <ul>
+                    <li>Deprecated in: v_1.0</li>
+                    <li>Why?: It was a test for using another function</li>
+                    <li>New usage: String Functions <code>myVar = newValue</code></li>
+                </ul>
+                <h4><code>runFunction()</code> :</h4>
+                <ul>
+                    <li>Deprecated in: v_1.0</li>
+                    <li>Why?: It was to long</li>
+                    <li>New usage: Variable Functions <code>functionName()</code></li>
+                </ul>
+            </div>
+        </div>
     </article>
     <footer>
         <div style="float: left;">
@@ -94,5 +157,10 @@
             </ul>
         </div>
     </footer>
+    
+    <script>
+        
+
+    </script>
 </body>
 </html>

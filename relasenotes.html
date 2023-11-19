@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ePi - Relase Notes</title>
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        a {
+            color:whitesmoke;
+        }
+        a:hover {
+            color:grey;
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        article a {
+            color:rgb(31, 31, 31);
+            text-decoration: none;
+        }
+        a:hover {
+            color:rgb(118, 118, 118);
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        .last-relase-panel {
+            padding:24px;
+            background-color: rgba(0,0,0,0.8);
+            color:whitesmoke;
+            width: 300px;
+            float:left;
+            margin-left: 5px;
+        }
+        .last-relase-panel:first {
+            padding:24px;
+            background-color: rgba(0,0,0,0.8);
+            color:whitesmoke;
+            width: 300px;
+            float:left;
+            margin-left:0px!important;
+        }
+        .last-relase-panel h3 {
+            margin-top: 5px;
+        }
+        footer {
+            padding: 20px;
+            background-color: rgb(44, 44, 44);
+            height: 150px;
+            position:fixed;
+            bottom: 0;
+            right: 0;
+            left:0;
+        }
+        footer * {
+            background-color: rgb(44, 44, 44);
+        }
+        footer ul {
+            list-style-type: none;
+            color:aliceblue
+        }
+        code {
+            padding:6px;
+            color:aliceblue;
+            background-color: rgba(0,0,0,0.8);
+            font-family: monospace;
+            margin: 5px 0px 5px 0px;
+            display: inline-block;
+        }
+        [list] p:not([reference]) {
+            color:rgb(53, 53, 53);
+        }
+        [list] p:not([reference]):hover {
+            color:grey;
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        body {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        li {
+            height: fit-content;
+        }
+        [list] {
+            position: fixed;
+        }
+        #container {
+            margin-left: 100px;
+        }
+        .comment {
+            color: green; /* Change the color to your desired one */
+        }
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+</head>
+<body style="margin:0">
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;left:0;right:0;">
+        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">Relase Notes</div>
+        <a style="float:right;padding:6px;font-size:15px" href="https://github.com/eLiteEs/epi">GitHub</a>
+    </header>
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;top:30px;left:0;right:0;">
+        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">epi</div>
+        <a style="padding:6px;font-size:15px" href="index.html">Inicio</a>
+        <a style="padding:6px;font-size:15px" href="download.html">Download</a>
+        <a style="padding:6px;font-size:15px" href="docs.html">Docs</a>
+        <a style="padding:6px;font-size:15px" href="deprecated.html">Deprecated</a>
+        </header>
+    <article style="padding:12px;position:absolute ;top: 60px;z-index: -1;">
+        <div style="padding-left: 12px;margin-bottom: 200px;">
+            <h2>What's new on v_1.0?</h2>
+            <ul>
+                <li>Created this section for you to know new things of epi.</li>
+                <li>Added <code>runIf</code> function for running a function if the condition is <code>1</code> or other code if else.</li>
+                <li>Added <code>img.imageToTxt</code> function for reading an image and store it in a variable as text. (Java 21^ required)</li>
+                <li>Added <code>netw.readFileFromInternet</code> function for reading a file in internet. (Java 21^ required)</li>
+                <li>Added <code>netw.readLineFileFromInternet</code> function for reading a specified line from a file in internet. (Java 21^ required)</li>
+                <li>Created <code>String Methods</code> for modifing <code>String</code> content.</li>
+                <li>Created <code>Visual Elements</code> for making your program more colorful.</li>
+                <li>Added <code>random</code> function for creating random numbers with a max and a min.</li>
+                <li>Added <code>Variable Functions</code> for running variables with less text.</li>
+                <li>Added <code>Epi examples in depth</code> section in docs main screen for knowing cool things to do with epi.</li>
+                <li>Deprecated some functions</li>
+                <li>Added <code>checkupdates</code> command for when you run epi auto check for updates. (Java 21^ required) (Internet Connection required for correct working)</li>
+                <li>Created a gui for running the program with more options.</li>
+            </ul>
+        </div>
+    </article>
+    <footer>
+        <div style="float: left;">
+            <ul>
+                <li>eLite Proyect (c) 2023</li>
+                <li>epi (c) 2023</li>
+                <li>eDK (c) 2023</li>
+                <li>elmo (c) 2023</li>
+            </ul>
+        </div>
+        <div style="float:right">
+            <ul>
+                <li>Contact: <a href="mailto:lite.atencionalcliente@gmail.com">lite.atencionalcliente@gmail.com</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script>
+        
+
+    </script>
+</body>
+</html>

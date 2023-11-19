@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ePi - Docs</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
     <style>
         * {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -90,6 +89,24 @@
         #container {
             margin-left: 100px;
         }
+        .comment {
+            color: green; /* Change the color to your desired one */
+        }
+        table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
     </style>
 </head>
 <body style="margin:0">
@@ -101,6 +118,8 @@
         <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">epi</div>
         <a style="padding:6px;font-size:15px" href="index.html">Inicio</a>
         <a style="padding:6px;font-size:15px" href="download.html">Download</a>
+        <a style="padding:6px;font-size:15px" href="deprecated.html">Deprecated</a>
+        <a style="padding:6px;font-size:15px" href="relasenotes.html">Relase Notes</a>
     </header>
     <article style="padding:12px;position:absolute ;top: 60px;z-index: -1;">
         <div style="padding-left: 12px;">
@@ -120,13 +139,24 @@
                 <p onclick="showOne('i12')">Networking</p>
                 <p onclick="showOne('i13')">Functions</p>
                 <p onclick="showOne('i14')">Dialogs</p>
-                <p onclick="showOne('i15')">Loops</p>
+                <p onclick="showOne('i15')">Loops (repeat)</p>
+                <p onclick="showOne('i16')">If</p>
+                <p onclick="showOne('i17')">Images</p>
+                <p onclick="showOne('i18')">Read Files From Internet</p>
+                <p onclick="showOne('i19')">Read Lines From Internet</p>
+                <p onclick="showOne('i20')">String Methods</p>
+                <p onclick="showOne('i21')">Visual Elements</p>
+                <p onclick="showOne('i22')">Random</p>
+                <p onclick="showOne('i23')">Variable Functions</p>
+                <p onclick="showOne('i24')">Char functions</p>
+                <p onclick="showOne('i666')">Epi examples in depth</p>
             </div>
-            <div id="container" style="float: left;width: fit-content; padding: 10px;max-width: 75%;margin-left:150px">
+            <div id="container" style="margin-left:150px;float: left;width: fit-content; padding: 10px;max-width: 75%;overflow-x: scroll;">
                 <div id="i1">
                     <h3>Documents</h3>
                     <p>Here you can view some tutorials of how to code in epi.</p>
-                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Recomended version: v_0.rev1 or higher. It has important bugfix, implementations, and accesibility.</p>    
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Recomended version: v_1.0 or higher. It has important bugfix, implementations, and accesibility.</p>    
+                    <p style="padding: 12px;border-left:4px solid rgb(0, 110, 161);background-color: rgba(0, 166, 255, 0.538);"><b>Info:</b> If you want, you can see a few examples of whta you can do with epi <a href="#" onclick="showOne('i666')">here</a>.</p>    
                     
                 </div>
                 <div id="i2">
@@ -201,13 +231,19 @@
                         <p>Output:</p>
                         <code>Enter username: ▮</code>
                     </block>
-                   </div>
+                </div>
                 <div id="i6">
                     <h3>Var</h3>
                     <p><code>var</code> command works for store information as a string.</p>
-                    <p>Added in: v_0.1</p>
+                    <p>Added in: v_0.1, Updated in: v_1.0</p>
                     <blockText>
-                        <h3>Usage on v_0.1^</h3>
+                        <h3>Usage on v_1.0^</h3>
+                        <p style="padding: 12px;border-left:4px solid rgb(161, 72, 0);background-color: rgba(255, 140, 0, 0.538)">Deprecated: <code>setva</code> function is not neccesary(v_1.0^), you can use <a href="#" onclick="showOne('i20')">String Methods</a> to know how to edit variables. See <a href="deprecated.html">deprecated</a> lib to view more information.</p>    
+                        <h4>Modifing var values</h2>
+                        <code>var myVariable null<br>print("Old: " + var(myVariable))<br>setva("myVariable", "hi")<br>print("New: " + var(myVariable))</code>
+                        <p>Output:</p>
+                        <code>Old: null<br>New: hi</code>
+                        <h3>Usage on v_0.1-v_0.rev1</h3>
                         <code>var name value</code>
                         <p>Example: <code>var user null</code></p>
                         <p>It can be called by <code>var(varName)</code>. The varName should be without ""</p>
@@ -303,11 +339,15 @@
                     <h3>Networking</h3>
                     <p>In v_0.3, there is a way to import files made up in java. So intallation of v_0.3 includes some files to send messages to servera or recieve mesasges. You can use <code>netw.createServer</code> and <code>netw.createConection</code>.</p>
                     <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
-                    <p>Added in: v_0.3</p>
+                    <p>Added in: v_0.3, Updated in: v_1.0</p>
                     <blockText>
+                        <h3>Usage on v_1.0:</h3>
+                        <p>Now in <code>netw.createConnection</code> function you can add spaces to messages using '_' character</p>
+                        <p>Example:</p>
+                        <code>var output null<br>netw.createConnection("1234 supersecretip hi_again", "output")</code>
                         <h3>Usage on v_0.3^</h3>
                         <h4>Create a Server to Recieve Text</h4>
-                        <p>main.epi</p>
+                        <p><code>main.epi</code> file:</p>
                         <code>var data null<br>
                             netw.createServer("2288", "data")<br>
                             print(var(data))</code>
@@ -317,7 +357,7 @@
                         <code>"data"</code><span> &lt;- Where to save the recieved text.</span><br>
                         <hr>
                         <h4>Create a Connection and Send Text</h4>
-                        <p>sub.epi</p>
+                        <p><code>sub.epi</code> file:</p>
                         <code>var data null<br>
                             netw.createConection("2288 supersecretip hi", "data")<br>
                             print(var(data))</code>
@@ -334,9 +374,20 @@
                 <div id="i13">
                     <h3>Function</h3>
                     <p>For creating functions you can create them by using <code>openFunction</code>, <code>closeFunction</code> and <code>runFunction</code>.</p>
-                    <p>Added in: v_0.3</p>
+                    <p>Added in: v_0.3, Updated in: v_1.0</p>
                     <blockText>
-                        <h3>Usage on v_0.3^</h3>
+                        <p style="padding: 12px;border-left:4px solid rgb(161, 72, 0);background-color: rgba(255, 140, 0, 0.538)">Deprecated: <code>runFunction</code> function is not neccesary(v_1.0^), you can use <a href="#" onclick="showOne('i23')">variable functions</a> to know how to run functions. See <a href="deprecated.html">deprecated</a> lib to view more information.</p>    
+                        
+                        <h3>Usage v_1.0^:</h3>
+                        <p><code>main.epi</code> File:</p>
+                        <code>var function null<br>
+                            openFunction("function")<br>
+                            print("hi")<br>
+                            closeFunction()<br>
+                            function()</code>
+                        <p>Output:</p>
+                        <code>hi</code>
+                        <h3>Usage on v_0.3-v_0.rev1</h3>
                         <p><code>main.epi</code> File:</p>
                         <code>var function null<br>
                             openFunction("function")<br>
@@ -352,9 +403,14 @@
                     <p>You can create dialogs to warn the user of something visually or getting userinput.</p>
                     <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
             
-                    <p>Added in: v_0.rev1</p>
+                    <p>Added in: v_0.rev1, Updated in: v_1.0</p>
                     <blockText>
-                        <h3>Usage on v_0.rev1^</h3>
+                        <h3>Usage on 1.0:</h3>
+                        <p>Is the same but now you can put spaces on dialogs.</p>
+                        <p>Example: </p>
+                        <code>var output null<br>
+                            gui.showMessage("hi_hi hi", "output")</code>
+                        <h3>Usage on v_0.rev1</h3>
                         <h4>Create Normal Dialogs</h4>
                         <p>There are three types of dialogs:<br><code>showMessage</code> A dialog with an info icon<br><code>showWarning</code> A dialog with an warning icon<br><code>showError</code> A dialog with an error icon</p>
                         <p>Here is the use:</p>
@@ -401,7 +457,630 @@
                         <code>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br>hi<br></code>
                     </block>
                 </div>
-            </div>
+                <div id="i16">
+                    <h3>If</h3>
+                    <p>You can use <code>runIf</code> function to run a function if a condition is true or other condition if false.</p>
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            // Declarate functions<br>
+                            var loginok null<br>
+                            var loginbad null<br>
+                            var username null<br>
+                            openFunction("loginok")<br>
+                            print("Welcome!")<br>
+                            closeFunction()<br>
+                            openFunction("loginbad")<br>
+                            print("Error loging in")<br>
+                            closeFunction()<br>
+                            // Request username<br>
+                            in("username: ", "username")<br>
+                            // Check if username is meow and run loginok<br>
+                            runIf(ieq(var(username), "meow"), "loginok", "loginbad")
+                        </code>
+                        <p>Output:</p>
+                        <code>username: meow<br>Welcome!</code>
+                    </block>
+                </div>
+                <div id="i17">
+                    <h3>Images</h3>
+                    <p>You can use <code>img.imageToTxt</code> to read an image and save the output in a variable.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            var output null<br>
+                            img.imageToTxt("icon.png", "output")<br>
+                            print(var(output))
+                        </code>
+                        <p><code>icon.png</code> file:</p>
+                        <img src="icon.png">
+                        <p>Output: (1:12px) (That isn't the actual output, html doesn't want to put spaces.)</p>
+                        <code style="font-size: 1px;">
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc <br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc<br> 
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo:::oooooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo:.....:oooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo:.......:ooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.........ooooooooooooooooooooooooooooooooccccccccccccccccc<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.........:ooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.........:ooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.........oooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo:........oooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo:...:oooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooo::::ooooooooooooooooooooooooooooooooooooooooooooooooo::::oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooo............:ooooooooooooooooooooooo:::::::oooooooooo:...........:oooooooooooooooooooooooo:::::::ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooo.................:oooooooooooooooooooo.......:ooooooo:...............:oooooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooo:.....................ooooooooooooooooooo.......:ooooo:....................oooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooooooooooo:.......................oooooooooooooooooo.......:oooo.......................ooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            ooooooooooooooooooo:.........................:oooooooooooooooo.......:ooo.........................oooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooooooooo:.............::............:ooooooooooooooo.......:oo...........::..............ooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            ooooooooooooooooo:.........:oooooooo:..........ooooooooooooooo.......:o:......:ooooooooo:...........oooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooooooo:........:oooooooooooo:........:oooooooooooooo.......::.....:ooooooooooooo:.........:ooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooooooo........:ooooooooooooooo........:ooooooooooooo.............oooooooooooooooo:.........ooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            ooooooooooooooo........:ooooooooooooooooo........ooooooooooooo............oooooooooooooooooo:........:oooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooooo:.......:oooooooooooooooooo:.......:oooooooooooo...........oooooooooooooooooooo:........oooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooooo........oooooooooooooooooooo.......:oooooooooooo..........:ooooooooooooooooooooo........:ooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            ooooooooooooo:.......:oooooooooooooooooooo:.......oooooooooooo..........oooooooooooooooooooooo:.......:ooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            ooooooooooooo:.......oooooooooooooooooooooo.......oooooooooooo.........oooooooooooooooooooooooo........ooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            ooooooooooooo.......:oooooooooooooooooooooo.......:ooooooooooo.........oooooooooooooooooooooooo:.......:oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooo:.......ooooooooooooooooooooooo:.......ooooooooooo........:ooooooooooooooooooooooooo.......:oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooc<br>
+                            oooooooooooo:......:ooooooooooooooooooooooo:.......ooooooooooo........oooooooooooooooooooooooooo........oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......:ooooooooooooooooooooooo:.......ooooooooooo........oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......oooooooooooooooooooooooo:.......ooooooooooo........oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......................................ooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            ooooooooooo:.......................................ooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            ooooooooooo:.......................................ooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            ooooooooooo:.......................................ooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            ooooooooooo:.......................................ooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            ooooooooooo:.......................................ooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            ooooooooooo:.......ooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......ooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooo:.......oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooo.......:oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooo.......:oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccc<br>
+                            oooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooo.......:ooooooooooooooooooooooooo:.......:oooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccccccccccccccccc<br>
+                            oooooooooooo........oooooooooooooooooooooooooooooooooooooooooo........ooooooooooooooooooooooooo:.......ooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooo:.......oooooooooooooooooooooooooooooooooooooooooo........ooooooooooooooooooooooooo........ooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooo:.......:ooooooooooooooooooooooooooooooooooooooooo........:oooooooooooooooooooooooo.......:ooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooo........ooooooooooooooooooooooooooooooooooooooooo.........ooooooooooooooooooooooo:.......oooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooo:.......:oooooooooooooooooooooooooooooooooooooooo.........:oooooooooooooooooooooo........oooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooo:........oooooooooooooooooooooooooooooooooooooooo..........ooooooooooooooooooooo........:oooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooo.........oooooooooooooooooooooooo.oooooooooooooo..........:ooooooooooooooooooo:........ooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooo:........:ooooooooooooooooooooo:..oooooooooooooo...........:ooooooooooooooooo:........:ooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooo:.........ooooooooooooooooooo....oooooooooooooo.............ooooooooooooooo:........:oooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooo..........:oooooooooooooo:......oooooooooooooo..............:ooooooooooo:..........ooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooo:............::oooooo::.........oooooooooooooo.......::.......::ooooo::...........:ooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooo:..............................oooooooooooooo.......:o:.........................:oooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooo.............................oooooooooooooo.......:oo........................oooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooo..........................:ooooooooooooooo.......:ooo......................ooooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooo:.......................ooooooooooooooooo.......:oooo:..................:oooooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooo:..................:ooooooooooooooooooo.......:oooooo:..............:oooooooooooooooooooooooo.......ooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooo::..........::oooooooooooooooooooooo.......:oooooooo:::.......::oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo.......:oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeecooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                             cccccccccccccccccccooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccceeeeeeeeeeeeec<br>
+                            ccccccccccccccceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                            ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeec<br>
+                             cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc<br>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            </code>
+                    </block>
+                </div>
+                <div id="i18">
+                    <h3>Reading Files From Internet</h3>
+                    <p>You can use <code>netw.readFileFromInternet</code> for reading files with a specified URL.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            var output null<br>
+                            netw.readFileFromInternet("https://www.google.es", "output")<br>
+                            print(var(output))
+                        </code>
+                        <p>
+                        <p>Output: </p>
+                        <code>&lt;!doctype html&gt;&lt;html itemscope="" itemtype="http://schema.org/WebPage" lang="es"&gt;&lt;head&gt;&lt;meta content="Google.es permite acceder a la informaci?n mundial en castellano, catal?n, gallego, euskara e ingl?s." name="description"&gt;&lt;meta content="noodp" name="robots"&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"&gt;&lt;title&gt;Google&lt;/title&gt;&lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){var _g={kEI:'fDlSZaaLF--MhbIP-fqrmAE',kEXPI:'0,1365467,207,4804,2316,383,246,5,1129120,1805,106,1195846,644,380090,16114,28684,22431,1361,283,12029,17587,4998,17075,38444,889,1983,2891,3926,7828,606,30668,30022,2614,13491,230,20583,4,4755,54862,4437,22601,6636,7596,1,42154,2,20270,19491,5679,1020,31122,4568,6253,23424,1252,30152,29549,8155,23351,872,19634,7,1922,9779,12414,23871,6174,20199,5796,3,14433,20206,8377,19241,297,4825,782,2248,15816,1804,13806,21463,11813,1635,13492,21121,16441,5215444,2,579,133,353,5993900,253,2802966,3306,141,795,29783,172,1,20,2,78,15,30,2,5,2,23940458,4044106,16673,43886,3,2105,3,569,3,1310,1392060,727330,1,23031939,3326,9473,2945,5464,2878,336,1262,4423,5799,739,5034,12824,819,10029,3,545,1550,852,3476,3538,2542,8203,828,2,1122,4323,2368,4244,6405,1594,4643,3,510,2461,769,27,6,5,15,313,1329,5,1,779,2670,699,4,872,1106,771,992,2407,64,367,1643,1,549,148,242,214,1049,907,751,332,2302,1075,1296,253,42,1503,744,608,101,771,1387,378,394,659,359,741,271,880,18,250,1223,1251,961,153,50,51,1687,751,410,86,93,74,189,931,626,174,4,80,1,6,236,1651,969,788,4,500,17,832,1053,10,891,150,75,366,405,1317,300,105,2,6,2,318,326,61,45,294,9,363,336,1084,273,225,165,149,1,6,53,191,120,719,24,31,1588,400,741,1264,390,1706,5,125,90,126,174,1640,144,1,512,4,446,25,383,193,10,402,18,89,176,6,168,380,4,2133,267,20,168,1075,621,135,96,285,5,830,317,3,4,2,2,2,280,21351470,422561',kBL:'eIMV',kOPI:89978449};(function(){var a;(null==(a=window.google)?0:a.stvsc)?google.kEI=_g.kEI:window.google=_g;}).call(this);})();(function(){google.sn='webhp';google.kHL='es';})();(function(){
+var h=this||self;function l(){return void 0!==window.google&&void 0!==window.google.kOPI&&0!==window.google.kOPI?window.google.kOPI:null};var m,n=[];function p(a){for(var b;a&&(!a.getAttribute||!(b=a.getAttribute("eid")));)a=a.parentNode;return b||m}function q(a){for(var b=null;a&&(!a.getAttribute||!(b=a.getAttribute("leid")));)a=a.parentNode;return b}function r(a){/^http:/i.test(a)&&"https:"===window.location.protocol&&(google.ml&&google.ml(Error("a"),!1,{src:a,glmm:1}),a="");return a}
+function t(a,b,c,d,k){var e="";-1===b.search("&ei=")&&(e="&ei="+p(d),-1===b.search("&lei=")&&(d=q(d))&&(e+="&lei="+d));d="";var g=-1===b.search("&cshid=")&&"slh"!==a,f=[];f.push(["zx",Date.now().toString()]);h._cshid&&g&&f.push(["cshid",h._cshid]);c=c();nul
+l!=c&&f.push(["opi",c.toString()]);for(c=0;c&lt;f.length;c++){if(0===c||0&lt;c)d+="&";d+=f[c][0]+"="+f[c][1]}return"/"+(k||"gen_204")+"?atyp=i&ct="+String(a)+"&cad="+(b+e+d)};m=google.kEI;google.getEI=p;google.getLEI=q;google.ml=function(){return null};google.log
+=function(a,b,c,d,k,e){e=void 0===e?l:e;c||(c=t(a,b,e,d,k));if(c=r(c)){a=new Image;var g=n.length;n[g]=a;a.onerror=a.onload=a.onabort=function(){delete n[g]};a.src=c}};google.logUrl=function(a,b){b=void 0===b?l:b;return t("",a,b)};}).call(this);(function(){
+google.y={};google.sy=[];google.x=function(a,b){if(a)var c=a.id;else{do c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1};google.sx=function(a){google.sy.push(a)};google.lm=[];google.plm=function(a){google.lm.push.apply(google.lm,a)};google.lq=[];google.load=function(a,b,c){google.lq.push([[a],b,c])};google.loadAll=function(a,b){google.lq.push([a,b])};google.bx=!1;google.lx=function(){};var d=[];google.fce=function(a,b,c,e){d.push([a,b,c,e])};google.qce=d;}).call(this);google.f={};(function(){   
+document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a="1"===c||"q"===c&&!a.elements.q.value?!0:!1}else a=!1;a&&(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.ad
+dEventListener("click",function(b){var a;a:{for(a=b.target;a&&a!==document.documentElement;a=a.parentElement)if("A"===a.tagName){a="1"===a.getAttribute("data-nohref");break a}a=!1}a&&b.preventDefault()},!0);}).call(this);&lt;/script&gt;&lt;style&gt;#gbar,#guser{font-si
+ze:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}
+&lt;/style&gt;&lt;style&gt;body,td,a,p,.h{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#1967d2}em{font-weight:bold;font-style:normal}.lst{height:25px;
+width:496px}.gsfi,.lst{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#681da8;text-decoration:none}a:
+hover,a:active{text-decoration:underline}.fl a{color:#1967d2}a:visited{color:#681da8}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}.lsbb{background:#f8f9fa;border:solid 1px;border-color:#dadce0 #70757a #70757a #dad
+ce0;height:30px}.lsbb{display:block}#WqQANb a{display:inline-block;margin:0 12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;color:#000;border:none;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}.lsb:active{background:#dadce0}.lst:focus{outline:none}&lt;/style&gt;&lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){window.google.erd={jsr:1,bv:1899,de:true};
+var h=this||self;var k,l=null!=(k=h.mei)?k:1,n,p=null!=(n=h.sdo)?n:!0,q=0,r,t=google.erd,v=t.jsr;google.ml=function(a,b,d,m,e){e=void 0===e?2:e;b&&(r=a&&a.message);void 0===d&&(d={});d.cad="ple_"+google.ple+".aple_"+google.aple;if(google.dl)return google.dl
+(a,e,d),null;if(0&gt;v){window.console&&console.error(a,d);if(-2===v)throw a;b=!1}else b=!a||!a.message||"Error loading script"===a.message||q&gt;=l&&!m?!1:!0;if(!b)return null;q++;d=d||{};b=encodeURIComponent;var c="/gen_204?atyp=i&ei="+b(google.kEI);google.kEXPI&&(c+="&jexpid="+b(google.kEXPI));c+="&srcpg="+b(google.sn)+"&jsr="+b(t.jsr)+"&bver="+
+b(t.bv);var f=a.lineNumber;void 0!==f&&(c+="&line="+f);var g=a.fileName;g&&(0&lt;g.indexOf("-extension:/")&&(e=3),c+="&script="+b(g),f&&g===window.location.href&&(f=document.documentElement.outerHTML.split("\n")[f],c+="&cad="+b(f?f.substring(0,300):"No script 
+found.")));google.ple&&1===google.ple&&(e=2);c+="&jsel="+e;for(var u in d)c+="&",c+=b(u),c+="=",c+=b(d[u]);c=c+"&emsg="+b(a.name+": "+a.message);c=c+"&jsst="+b(a.stack||"N/A");12288&lt;=c.length&&(c=c.substr(0,12288));a=c;m||google.log(0,"",a);return a};window
+.onerror=function(a,b,d,m,e){r!==a&&(a=e instanceof Error?e:Error(a),void 0===d||"lineNumber"in a||(a.lineNumber=d),void 0===b||"fileName"in a||(a.fileName=b),google.ml(a,!1,void 0,!1,"SyntaxError"===a.name||"SyntaxError"===a.message.substring(0,11)||-1!==a
+.message.indexOf("Script error")?3:0));r=null;p&&q&gt;=l&&(window.onerror=null)};})();&lt;/script&gt;&lt;/head&gt;&lt;body bgcolor="#fff"&gt;&lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){var src='/images/nav_logo229.png';var iesg=false;document.body.onload = function(){window.n && window.n();if (document.images){new Image().src=src;}
+if (!iesg){document.f&&document.f.q.focus();document.gbqf&&document.gbqf.q.focus();}
+}
+})();&lt;/script&gt;&lt;div id="mngb"&gt;&lt;div id=gbar&gt;&lt;nobr&gt;&lt;b class=gb1&gt;B?squeda&lt;/b&gt; &lt;a class=gb1 href="https://www.google.com/imghp?hl=es&tab=wi"&gt;Im?genes&lt;/a&gt; &lt;a class=gb1 href="https://maps.google.es/maps?hl=es&tab=wl"&gt;Maps&lt;/a&gt; &lt;a class=gb1 href="https://play.google
+.com/?hl=es&tab=w8"&gt;Play&lt;/a&gt; &lt;a class=gb1 href="https://www.youtube.com/?tab=w1"&gt;YouTube&lt;/a&gt; &lt;a class=gb1 href="https://news.google.com/?tab=wn"&gt;Noticias&lt;/a&gt; &lt;a class=gb1 href="https://mail.google.com/mail/?tab=wm"&gt;Gmail&lt;/a&gt; &lt;a class=gb1 href="https://drive
+.google.com/?tab=wo"&gt;Drive&lt;/a&gt; &lt;a class=gb1 style="text-decoration:none" href="https://www.google.es/intl/es/about/products?tab=wh"&gt;&lt;u&gt;M?s&lt;/u&gt; &raquo;&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div id=guser width=100%&gt;&lt;nobr&gt;&lt;span id=gbn class=gbi&gt;&lt;/span&gt;&lt;span id=gbf class=gbf&gt;&lt;/span
+&gt;&lt;span id=gbe&gt;&lt;/span&gt;&lt;a href="http://www.google.es/history/optout?hl=es" class=gb4&gt;Historial web&lt;/a&gt; | &lt;a  href="/preferences?hl=es" class=gb4&gt;Ajustes&lt;/a&gt; | &lt;a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=es&passive=true&continue=h
+ttps://www.google.com/&ec=GAZAAQ" class=gb4&gt;Iniciar sesi?n&lt;/a&gt;&lt;/nobr&gt;&lt;/div&gt;&lt;div class=gbh style=left:0&gt;&lt;/div&gt;&lt;div class=gbh style=right:0&gt;&lt;/div&gt;&lt;/div&gt;&lt;center&gt;&lt;br clear="all" id="lgpd"&gt;&lt;div id="lga"&gt;&lt;img alt="Google" height="92" src="/images/branding/googlel
+ogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;form action="/search" name="f"&gt;&lt;table cellpadding="0" cellspacing="0"&gt;&lt;tr valign="top"&gt;&lt;td width="25%"&gt;&nbsp;&lt;/td&gt;&lt;td align="center" no
+wrap=""&gt;&lt;input name="ie" value="ISO-8859-1" type="hidden"&gt;&lt;input value="es" name="hl" type="hidden"&gt;&lt;input name="source" type="hidden" value="hp"&gt;&lt;input name="biw" type="hidden"&gt;&lt;input name="bih" type="hidden"&gt;&lt;div class="ds" style="height:32px;margin:4px 0
+"&gt;&lt;input class="lst" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000" autocomplete="off" value="" title="Buscar con Google" maxlength="2048" name="q" size="57"&gt;&lt;/div&gt;&lt;br style="line-height:0"&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input cl
+ass="lsb" value="Buscar con Google" name="btnG" type="submit"&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="ds"&gt;&lt;span class="lsbb"&gt;&lt;input class="lsb" id="tsuid_1" value="Voy a tener suerte" name="btnI" type="submit"&gt;&lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){var id='tsuid_1';document.getElementById(id).onclick = function(){if (this.form.q.value){this.checked = 1;if (this.form.iflsig)this.form.iflsig.disabled = false;}
+else top.location='/doodles/';};})();&lt;/script&gt;&lt;input value="AO6bgOgAAAAAZVJHjC4b8hSHhdNsCs1NCRtjKnLUBEUt" name="iflsig" type="hidden"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/td&gt;&lt;td class="fl sblc" align="left" nowrap="" width="25%"&gt;&lt;a href="/advanced_search?hl=es&amp;authuser=0"&gt;B
+?squeda avanzada&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;input id="gbv" name="gbv" type="hidden" value="1"&gt;&lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){var a,b="1";if(document&&document.getElementById)if("undefined"!=typeof XMLHttpRequest)b="2";else if("undefined"!=typ
+eof ActiveXObject){var c,d,e=["MSXML2.XMLHTTP.6.0","MSXML2.XMLHTTP.3.0","MSXML2.XMLHTTP","Microsoft.XMLHTTP"];for(c=0;d=e[c++];)try{new ActiveXObject(d),b="2"}catch(h){}}a=b;if("2"==a&&-1==location.search.indexOf("&gbv=2")){var f=google.gbvu,g=document.getE
+lementById("gbv");g&&(g.value=a);f&&window.setTimeout(function(){location.href=f},0)};}).call(this);&lt;/script&gt;&lt;/form&gt;&lt;div id="gac_scont"&gt;&lt;/div&gt;&lt;div style="font-size:83%;min-height:3.5em"&gt;&lt;br&gt;&lt;div id="prm"&gt;&lt;style&gt;.szppmdbYutt__middle-slot-promo{font-size:smal
+l;margin-bottom:32px}.szppmdbYutt__middle-slot-promo a.ZIeIlb{display:inline-block;text-decoration:none}.szppmdbYutt__middle-slot-promo img{border:none;margin-right:5px;vertical-align:middle}&lt;/style&gt;&lt;div class="szppmdbYutt__middle-slot-promo" data-ved="0ahU
+KEwimuaitnsGCAxVvRkEAHXn9ChMQnIcBCAQ"&gt;&lt;img alt="" height="32" src="https://www.google.com/images/hpp/get-certified.png" width="32"&gt;&lt;span&gt;F?rmate para trabajos demandados con el &lt;/span&gt;&lt;a class="NKcBbd" href="https://www.google.com/url?q=https://grow.google/
+intl/es/google-career-certificates/data-analytics/%3Futm_source%3DHPP%26utm_medium%3Downed%26utm_campaign%3DQ4_Nov_2023_EMEA_Data_Analytics_Cert_HPP%26utm_content%3D_Spain&amp;source=hpp&amp;id=19039495&amp;ct=3&amp;usg=AOvVaw2hYZFKM7WjlADC6iWcjwQb&amp;sa=X
+&amp;ved=0ahUKEwimuaitnsGCAxVvRkEAHXn9ChMQ8IcBCAU" rel="nofollow"&gt;Certificado de An?lisis de Datos de Google&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id="gws-output-pages-elements-homepage_additional_languages__als"&gt;&lt;style&gt;#gws-output-pages-elements-homepage_additional_language
+s__als{font-size:small;margin-bottom:24px}#SIvCob{color:#3c4043;display:inline-block;line-height:28px;}#SIvCob a{padding:0 3px;}.H6sW5{display:inline-block;margin:0 2px;white-space:nowrap}.z4hgWe{display:inline-block;margin:0 2px}&lt;/style&gt;&lt;div id="SIvCob"&gt;Of
+recido por Google en:  &lt;a href="https://www.google.com/setprefs?sig=0_NGWOVU7BNC5SAj6LAwH7Wg-Odjw%3D&amp;hl=ca&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwimuaitnsGCAxVvRkEAHXn9ChMQ2ZgBCAc"&gt;catal?&lt;/a&gt;    &lt;a href="https://www.google.com/setprefs?sig=0_NGWOVU
+7BNC5SAj6LAwH7Wg-Odjw%3D&amp;hl=gl&amp;source=homepage&amp;sa=X&amp;ved=0ahUKEwimuaitnsGCAxVvRkEAHXn9ChMQ2ZgBCAg"&gt;galego&lt;/a&gt;    &lt;a href="https://www.google.com/setprefs?sig=0_NGWOVU7BNC5SAj6LAwH7Wg-Odjw%3D&amp;hl=eu&amp;source=homepage&amp;sa=X&amp;ved=0ahU
+KEwimuaitnsGCAxVvRkEAHXn9ChMQ2ZgBCAk"&gt;euskara&lt;/a&gt;  &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;span id="footer"&gt;&lt;div style="font-size:10pt"&gt;&lt;div style="margin:19px auto;text-align:center" id="WqQANb"&gt;&lt;a href="/intl/es/ads/"&gt;Publicidad&lt;/a&gt;&lt;a href="http://www.google.es/intl/es/servic
+es/"&gt;Soluciones Empresariales&lt;/a&gt;&lt;a href="/intl/es/about.html"&gt;Todo acerca de Google&lt;/a&gt;&lt;a href="https://www.google.com/setprefdomain?prefdom=ES&amp;prev=https://www.google.es/&amp;sig=K_xhqSGihRWg_rkEgS2QE7tCnOfUQ%3D"&gt;Google.es&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;p style="fon
+t-size:8pt;color:#70757a"&gt;&copy; 2023 - &lt;a href="/intl/es/policies/privacy/"&gt;Privacidad&lt;/a&gt; - &lt;a href="/intl/es/policies/terms/"&gt;T?rminos&lt;/a&gt;&lt;/p&gt;&lt;/span&gt;&lt;/center&gt;&lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){window.google.cdo={height:757,width:1440};(function(){var a=window.innerWidth,b=window.innerHeight;if(!a||!b){var c=window.document,d="CSS1Compat"==c.compatMode?c.documentElement:c.body;a=d.clientWidth;b=d.clientHeight}
+if(a&&b&&(a!=google.cdo.width||b!=google.cdo.height)){var e=google,f=e.log,g="/client_204?&atyp=i&biw="+a+"&bih="+b+"&ei="+google.kEI,h="",k=[],l=void 0!==window.google&&void 0!==window.google.kOPI&&0!==window.google.kOPI?window.google.kOPI:null;null!=l&&k.
+push(["opi",l.toString()]);for(var m=0;m&lt;k.length;m++){if(0===m||0&lt;m)h+="&";h+=k[m][0]+"="+k[m][1]}f.call(e,"","",g+h)};}).call(this);})();&lt;/script&gt; &lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){google.xjs={ck:'xjs.hp.KMpMd6qiBqo.L.X.O',combam:'CAAAAAA
+AAAAAAAAAAAAAAAgAAAAARA2EQwAAAIBAAAgAAAABABCwQhRCMABAAACAESpAAAATICgBQAAiBYBZAAAJiAEAAAQAAME-AAAAAAQAAGAAAAACGgUwgBCoEBAAAABADgAADwAxCLAAAAAAAAAAAAAAQMASBIMLEgAAAQAAAAAAAAAAAAAAkJImDg',cs:'ACT90oHrovQb16gVSykd-e3BzNHr1Ed3GA',cssam:'AAAAAAAAAAAAAAAAAAAAAAgAA
+AAARAiEAwAAAAAAAAgAAAABAACgAgBAMABAAACAAAAAAAAAICgBQAAiBQBAAAAJiAEAAAQAAEAAAAAAAAQAAEAAAAACCAQwgBAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAI',cssopt:false,csss:'ACT90oE2FIYNwzERpND90fDcO_G3ct_3fA',excm:[],sepam:false,sepcss:false};})()
+;&lt;/script&gt;     &lt;script nonce="qkDHpkn0sG83pJQBb3OFiQ"&gt;(function(){var u='/xjs/_/js/k\x3dxjs.hp.en.OEoyrI9eqms.O/am\x3dAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAADgAgQAAAAAAAAAAAEAAAHQEAsAAAFw/d\x3d1/ed\x3d1/rs\x3dACT90oEjbdtk6dVqiTDU7xOp93hfXUDwpA/m\x3dsb_he,d,cEt90b,SNUn3,qddgKe,sTsDMc,dtl0hd,eHDfl';var amd=0;
+var e=this||self,f=function(a){return a};var g;var h=function(a){this.g=a};h.prototype.toString=function(){return this.g+""};var k={};var l=function(){var a=document;var b="SCRIPT";"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)};
+function m(a,b){a.src=b instanceof h&&b.constructor===h?b.g:"type_error:TrustedResourceUrl";var c,d;(c=(b=null==(d=(c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document).querySelector)?void 0:d.call(c,"script[nonce]"))?b.nonce||b.getAttribute("
+nonce")||"":"")&&a.setAttribute("nonce",c)};function n(a){a=null===a?"null":void 0===a?"undefined":a;if(void 0===g){var b=null;var c=e.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:f,createScript:f,createScriptURL:f})}catch
+(d){e.console&&e.console.error(d.message)}g=b}else g=b}a=(b=g)?b.createScriptURL(a):a;return new h(a,k)};void 0===google.ps&&(google.ps=[]);function p(){var a=u,b=function(){};google.lx=google.stvsc?b:function(){q(a);google.lx=b};google.bx||google.lx()}func
+tion r(a,b){b&&m(a,n(b));var c=a.onload;a.onload=function(d){c&&c(d);google.ps=google.ps.filter(function(t){return a!==t})};google.ps.push(a);document.body.appendChild(a)}google.as=r;function q(a){google.timers&&google.timers.load&&google.tick&&google.tick(
+"load","xjsls");var b=l();b.onerror=function(){google.ple=1};b.onload=function(){google.ple=0};google.xjsus=void 0;r(b,a);google.aple=-1;google.psa=!0};google.xjsu=u;e._F_jsUrl=u;setTimeout(function(){0&lt;amd?google.caft(function(){return p()},amd):p()},0);})
+();window._ = window._ || {};window._DumpException = _._DumpException = function(e){throw e;};window._s = window._s || {};_s._DumpException = _._DumpException;window._qs = window._qs || {};_qs._DumpException = _._DumpException;(function(){var t=[1,0,0,0,134217728,16777216,57344,4104,536870912,4194304,1167360,11264,23];window._F_toggles = window._xjs_toggles = t;})();function _F_installCss(c){}
+(function(){google.jl={blt:'none',chnk:0,dw:false,dwu:true,emtn:0,end:0,ico:false,ikb:0,ine:false,injs:'none',injt:0,injth:0,injv2:false,lls:'default',pdt:0,rep:0,snet:true,strt:0,ubm:false,uwp:true};})();(function(){var pmc='{\x22d\x22:{},\x22sb_he\x22:{\x
+22agen\x22:false,\x22cgen\x22:false,\x22client\x22:\x22heirloom-hp\x22,\x22dh\x22:true,\x22ds\x22:\x22\x22,\x22fl\x22:true,\x22host\x22:\x22google.com\x22,\x22jsonp\x22:true,\x22lm\x22:true,\x22msgs\x22:{\x22cibl\x22:\x22Borrar b\\u00fasqueda\x22,\x22dym\x2
+2:\x22Quiz\\u00e1s quisiste decir:\x22,\x22lcky\x22:\x22Voy a tener suerte\x22,\x22lml\x22:\x22M\\u00e1s informaci\\u00f3n\x22,\x22psrc\x22:\x22Esta b\\u00fasqueda se ha eliminado de tu \\u003Ca href\x3d\\\x22/history\\\x22\\u003Ehistorial web\\u003C/a\\u00
+3E.\x22,\x22psrl\x22:\x22Eliminar\x22,\x22sbit\x22:\x22Buscar por imagen\x22,\x22srch\x22:\x22Buscar con Google\x22},\x22ovr\x22:{},\x22pq\x22:\x22\x22,\x22rfs\x22:[],\x22sbas\x22:\x220 3px 8px 0 rgba(0,0,0,0.2),0 0 0 1px rgba(0,0,0,0.08)\x22,\x22stok\x22:\x22pWRKa8FsS6ydQeUf9cH_T6sc4Ow\x22}}';google.pmc=JSON.parse(pmc);})();(function(){var b=function(a){var c=0;return function(){return c&lt;a.length?{done:!1,value:a[c++]}:{done:!0}}};
+var e=this||self;var g,h;a:{for(var k=["CLOSURE_FLAGS"],l=e,n=0;n&lt;k.length;n++)if(l=l[k[n]],null==l){h=null;break a}h=l}var p=h&&h[610401301];g=null!=p?p:!1;var q,r=e.navigator;q=r?r.userAgentData||null:null;function t(a){return g?q?q.brands.some(function(c
+){return(c=c.brand)&&-1!=c.indexOf(a)}):!1:!1}function u(a){var c;a:{if(c=e.navigator)if(c=c.userAgent)break a;c=""}return-1!=c.indexOf(a)};function v(){return g?!!q&&0&lt;q.brands.length:!1}function w(){return u("Safari")&&!(x()||(v()?0:u("Coast"))||(v()?0:u(
+"Opera"))||(v()?0:u("Edge"))||(v()?t("Microsoft Edge"):u("Edg/"))||(v()?t("Opera"):u("OPR"))||u("Firefox")||u("FxiOS")||u("Silk")||u("Android"))}function x(){return v()?t("Chromium"):(u("Chrome")||u("CriOS"))&&!(v()?0:u("Edge"))||u("Silk")}function y(){retu
+rn u("Android")&&!(x()||u("Firefox")||u("FxiOS")||(v()?0:u("Opera"))||u("Silk"))};var z=v()?!1:u("Trident")||u("MSIE");y();x();w();Object.freeze({});var A=!z&&!w(),D=function(a){if(/-[a-z]/.test("ved"))return null;if(A&&a.dataset){if(y()&&!("ved"in a.datase
+t))return null;a=a.dataset.ved;return void 0===a?null:a}return a.getAttribute("data-"+"ved".replace(/([A-Z])/g,"-$1").toLowerCase())};var E=[],F=null;function G(a){a=a.target;var c=performance.now(),f=[],H=f.concat,d=E;if(!(d instanceof Array)){var m="undef
+ined"!=typeof Symbol&&Symbol.iterator&&d[Symbol.iterator];if(m)d=m.call(d);else if("number"==typeof d.length)d={next:b(d)};else throw Error("a`"+String(d));for(var B=[];!(m=d.next()).done;)B.push(m.value);d=B}E=H.call(f,d,[c]);if(a&&a instanceof HTMLElement)if(a===F){if(c=4&lt;=E.length)c=5&gt;(E[E.length-1]-E[E.length-4])/1E3;if(c){c=google.getEI(a);a.hasAttribute("data-ved")?f=a?D(a)||"":"":f=(f=
+a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.getAttribute("jsname");else{var C;a=null==(C=a.closest("[jsname]"))?void 0:C.getAttribute("jsname")}google.log("rcm","&ei="+c+"&ved="+f+"&jsname="+(a||""))}}else F=a,E=[c]}window.document.addEventListener("DOMContentLoaded",function(){document.body.addEventListener("click",G)});}).call(this);&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+</code>
+                    </block>
+                </div>
+                <div id="i19">
+                    <h3>Reading Lines From Internet</h3>
+                    <p>You can use <code>netw.readLineFileFromInternet</code> for reading a specified line of a file on Internet.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            var output null<br>
+                            // 2 sets the line to read
+                            netw.readLineFileFromInternet("https://www.google.es 2", "output")<br>
+                            print(var(output))
+                        </code>
+                        <p>
+                        <p>Output: </p>
+                        <code>var h=this||self;function l(){return void 0!==window.google&&void 0!==window.google.kOPI&&0!==window.google.kOPI?window.google.kOPI:null};var m,n=[];function p(a){for(var b;a&&(!a.getAttribute||!(b=a.getAttribute("eid")));)a=a.parentNode;return b||m}function q(a){for(var b=null;a&&(!a.getAttribute||!(b=a.getAttribute("leid")));)a=a.parentNode;return b}function r(a){/^http:/i.test(a)&&"https:"===window.location.protocol&&(google.ml&&google.ml(Error("a"),!1,{src:a,glmm:1}),a="");return a}
+                        </code>
+                    </block>
+                </div>
+                <div id="i20">
+                    <h3>String Methods</h3>
+                    <p>Now you can modify strings using String Methods</p>
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <table>
+                            <tr>
+                              <th style="background-color: rgb(88, 88, 88);">Name</th>
+                              <th style="background-color: rgb(88, 88, 88);">Returns</th>
+                              <th style="background-color: rgb(88, 88, 88);">Comments</th>
+                              <th style="background-color: rgb(88, 88, 88);">Throws</th>
+                              <th style="background-color: rgb(88, 88, 88);">Example</th>
+                              <th style="background-color: rgb(88, 88, 88);">Output</th>
+                            </tr>
+                            <tr>
+                                <td><code>substr</code></td>
+                                <td>String</td>
+                                <td>Cuts the string using the two arguments and sets it to the variable</td>
+                                <td><code>IntegerOrString</code>, <code>WhoaBigger</code> or <code>IndexOutOfBounds</code></td>
+                                <td><code>var greeting Good Morning<br>greeting.substr(0,5)<br>print(var(greeting))</code></td>
+                                <td><code>Good </td>
+                            </tr>
+                            <tr>
+                                <td><code>find</code></td>
+                                <td>int</td>
+                                <td>Finds the argument on the variable</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting.find("Good")<br>print(var(greeting))</code></td>
+                                <td><code>0</td>
+                            </tr>
+                            <tr>
+                                    <td><code>index</code></td>
+                                    <td>String</td>
+                                    <td>Finds the character on the String using the index of the argument</td>
+                                    <td><code>IntegerOrString</code> or <code>IndexOutOfBounds</code></td>
+                                    <td><code>var greeting Good Morning<br>greeting.index(0)<br>print(var(greeting))</code></td>
+                                    <td><code>G</td>      
+                            </tr>
+                            <tr>
+                                <td><code>del</code></td>
+                                <td>String</td>
+                                <td>Makes the variable empty</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting.del()<br>print(var(greeting))</code></td>
+                                <td><code></code></td>      
+                            </tr>
+                            <tr>
+                                <td><code>delStr</code></td>
+                                <td>String</td>
+                                <td>Deletes a String from a String</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting.delStr(" Morning")<br>print(var(greeting))</code></td>
+                                <td><code>Good</code></td>      
+                            </tr>
+                            <tr>
+                                <td><code>add</code></td>
+                                <td>String</td>
+                                <td>Adds the String on a determinated position</td>
+                                <td><code>IntegerOrString</code> or <code>IndexOutOfBounds</code></td>
+                                <td><code>var greeting Good Morning<br>greeting.add(0, "Very ")<br>print(var(greeting))</code></td>
+                                <td><code>Very Good Morning</code></td>      
+                            </tr>
+                            <tr>
+                                <td><code>contains</code></td>
+                                <td>Boolean</td>
+                                <td>Checks if inside the variable there's the determinated String</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting.contains("Good")<br>print(var(greeting))</code></td>
+                                <td><code>1</code></td>      
+                            </tr>
+                            <tr>
+                                <td><code>encrypt</code></td>
+                                <td>String[en]</td>
+                                <td>Encrypts the variable using as key the argument</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting.encrypt("a")<br>print(var(greeting))</code></td>
+                                <td><code>&♣A,♠</code></td>      
+                            </tr>
+                            <tr>
+                                <td><code>decrypt</code></td>
+                                <td>String</td>
+                                <td>Decrypts the variable using the key specified on the arguments</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting.encrypt("a")<br>greeting.decrypt("a")<br>print(var(greeting))</code></td>
+                                <td><code>Good Morning</code></td>      
+                            </tr>
+                            <tr>
+                                <td><code>isNum</code></td>
+                                <td>Boolean</td>
+                                <td>Checks if the variable is a number</td>
+                                <td>nothing</td>
+                                <td><code>var pi 3.14<br>pi.isNum()<br>print(var(pi))</code></td>
+                                <td><code>1</code></td>      
+                            </tr><tr>
+                                <td><code>isBool</code></td>
+                                <td>Boolean</td>
+                                <td>Checks if the variable is a boolean</td>
+                                <td>nothing</td>
+                                <td><code>var true 1<br>pi.isBool()<br>print(var(true))</code></td>
+                                <td><code>1</code></td>      
+                            </tr><tr>
+                                <td><code>isEmpty</code></td>
+                                <td>Boolean</td>
+                                <td>Checks if the variable is empty</td>
+                                <td>nothing</td>
+                                <td><code>var meme hehehehee<br>meme.del()<br>meme.isEmpty()<br>print(var(meme))</code></td>
+                                <td><code>1</code></td>      
+                            </tr><tr>
+                                <td><code>replace</code></td>
+                                <td>String</td>
+                                <td>Replaces some text from the variable</td>
+                                <td>nothing</td>
+                                <td><code>var isNight Good Morning<br>isNight.replace("Morning", "Night")<br>print(var(isNight))</code></td>
+                                <td><code>Good Night</code></td>      
+                            </tr><tr>
+                                <td><code>forgive</code></td>
+                                <td>void</td>
+                                <td>Deletes the variable from memory</td>
+                                <td>nothing</td>
+                                <td><code>var pi 3.14<br>pi.forgive()<br>print(var(pi))</code></td>
+                                <td><code>*Program Crashes*</code></td>      
+                            </tr><tr>
+                                <td><code>indize</code></td>
+                                <td>String[i]</td>
+                                <td>Splits the variable using a pattern</td>
+                                <td><code>IntegerOrString</code> or <code>IndexOutOfBounds</code></td>
+                                <td><code>var users ;cat;dog;chicken;<br>users.indize(";", 0)<br>print(var(users))</code></td>
+                                <td><code>cat</code></td>      
+                            </tr><tr>
+                                <td><code>length</code></td>
+                                <td>int</td>
+                                <td>Returns the length of the variable</td>
+                                <td>nothing</td>
+                                <td><code>var greeting hello<br>greeting.length()<br>print(var(greeting))</code></td>
+                                <td><code>5</code></td>      
+                            </tr>
+                          </table>
+                    </block>
+                </div>
+                <div id="i21">
+                    <h3>Visual Elements</h3>
+                    <p>This commands could help the user to read better your program.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Some commands like <code>puc</code> don't work in professional cmd(old one), use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>    
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> <code>gotoxy</code> command doesn't work in professional cmd(old one) becose uit uses a special character to move the cursor, use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>    
+                    
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>puc</code> command:</p>
+                        <p>With this command you can change the terminal color.</p>
+                        <p>For <b>text</b> color(is not neccesary to put which color is displayed):</p>
+                        <ul><li>red_text</li><li>blue_text</li><li>green_text</li><li>purple_text</li><li>yellow_text</li><li>black_text</li><li>cyan_text</li><li>white_text</li></ul>
+                        <p>Usage:</p>
+                        <p><code>puc(colorToBeDisplayed)</code></p>
+                        <p>Example:</p>
+                        <code>puc("red_text")<br>print("a")</code>
+                        <p>Output: </p>
+                        <code>
+                            <b style="color: red;font-weight: normal;">a</b>
+                        </code>
+                        <p>For <b>background</b> color:</p>
+                        
+                        <ul><li>red_background</li><li>blue_background</li><li>green_background</li><li>purple_background</li><li>yellow_background</li><li>black_background</li><li>cyan_background</li><li>white_background</li></ul>
+                        <p>Usage:</p>
+                        <p><code>puc(colorToBeDisplayed)</code></p>
+                        <p>Example:</p>
+                        <code>puc("red_background")<br>print("a")</code>
+                        <p>Output: </p>
+                        <code>
+                            <b style="background-color: red;font-weight: normal;">a</b>
+                        </code>
+                        <hr>
+                        <p><code>clear</code> command:</p>
+                        <p>Clear command can be used for cleaning all the text on the screen.</p>
+                        <p>Example:</p>
+                        <code>print("a")<br>clear()</code>
+                        <p>Output:</p>
+                        <code style="width: 50px;height: 40px;"></code>
+                        <hr>
+                        <p><code>gotoxy</code> command:</p>
+                        <p>When you run this command it moves the writing cursor to a determinated x and y.</p>
+                        <p>Example:</p>
+                        <code>gotoyx(2,2)<br>print("I'm at x:2 y:2")</code>
+                        <p>Output:</p>
+                        <code><br><br>&nbsp;&nbsp;I'm at x:2 y:2</code>
+                    </block>
+                </div>
+                <div id="i22">
+                    <h3>Random</h3>
+                    <p>With <code>random</code> command you can generate random numbers.</p>
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>var storage null<br>random("storage", 0, 10)<br>print(var(storage))</code>
+                        <p>In this example, storage variable stores the output of the random functions using 0 as the min and 10 as the max.</p>    
+                        <p>Output:</p>
+                        <code>NumbersBetween0and10</code>
+                    </block>
+                </div>
+                <div id="i23">
+                    <h3>Variable Functions</h3>
+                    <p>This function was added on 1.0 for running functions with less code.</p>
+                    <p>Added in: v_1.0</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>var function null<br>openFunction("function")<br>print("hi")<br>closeFunction()<br>function()</code>
+                        <p>Output:</p>
+                        <code>hi</code>
+                    </block>
+                </div>
+                <div id="i666">
+                    <h3>Examples</h3>
+                    <p>Here you can view some games and programs that I made with epi.</p>
+                    
+                    <blockText>
+                        <p><code>guessTheNumber.epi</code> file:</p>
+                        <code>
+                            var userNumber null<br>
+                            var numberToGuess null<br>
+                            var numberCorrect null<br>
+                            var numberIncorrect null<br>
+                            random("numberToGuess", 0, 5)<br>
+                            in("Enter a number between 0 and 5: ", "userNumber")<br>
+                            openFunction("numberCorrect")<br>
+                            print("You accerted the number!")<br>
+                            closeFunction()<br>
+                            openFunction("numberIncorrect")<br>
+                            print("You didn't accerted the number, try again!")<br>
+                            closeFunction()<br>
+                            runIf(ieq(var(numberToGuess), var(userNumber)), numberCorrect, numberIncorrect)<br>
+                            print("Number to guess: " + var(numberToGuess))<br>
+                            print("You entered: " + var(userNumber))<br>
+                        </code>
+                        <p>Output:</p>
+                        <img src="ex1.png">
+                        <hr>
+                        <p><code>weatherIn.epi</code> file:</p>
+                        <code>
+                            var city null<br>
+                            var weather null<br>
+                            in("How is the weather in?: ", "city")<br>
+                            cmos.curl("https://wttr.in/" + var(city))<br>
+                        </code>
+                        <p>Output:</p>
+                        <img src="ex2.png" width="700">
+                        <hr>If you want to share another program made in epi, send it to me in <a href="mailto:lite.atencionalcliente@gmail.com">lite.atencionalcliente@gmail.com</a>
+                        <br>:)
+                    </block>
+                </div>
         </div>
         <div style="height: 170px;clear: both;"></div>
     </article>
@@ -436,6 +1115,13 @@
         document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
         document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
         document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
+
+        // Get all lines inside the pre element that start with "//"
+        document.querySelectorAll('#code').forEach(function (codeElement) {
+            codeElement.textContent = codeElement.textContent.replace(/\/\/.*$/gm, function (match) {
+                return '<span class="comment">' + match + '</span>';
+            });
+        });
 
     </script>
 </body>

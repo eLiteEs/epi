@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ePi - Download</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
     <style>
         * {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -49,10 +48,10 @@
             padding: 20px;
             background-color: rgb(44, 44, 44);
             height: 150px;
-            position: fixed;
+            position:fixed;
             bottom: 0;
+            right: 0;
             left:0;
-            right:0;
         }
         footer * {
             background-color: rgb(44, 44, 44);
@@ -61,38 +60,75 @@
             list-style-type: none;
             color:aliceblue
         }
+        [list] p:not([reference]) {
+            color:rgb(53, 53, 53);
+        }
+        [list] p:not([reference]):hover {
+            color:grey;
+            text-decoration: 2px underline;
+            cursor: pointer;
+        }
+        body {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        li {
+            height: fit-content;
+        }
+        [list] {
+            position: fixed;
+        }
+        #container {
+            margin-left: 100px;
+        }
+        .comment {
+            color: green; /* Change the color to your desired one */
+        }
     </style>
 </head>
 <body style="margin:0">
-    <header style="background-color: rgba(0,0,0,0.9); height: 30px;">
-        <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">Download</div>
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;left:0;right:0;"><div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">Downloads</div>
         <a style="float:right;padding:6px;font-size:15px" href="https://github.com/eLiteEs/epi">GitHub</a>
+        
     </header>
-    <header style="background-color: rgba(0,0,0,0.9); height: 30px;">
+    <header style="background-color: rgba(0,0,0,0.9); height: 30px;position: fixed;top:30px;left:0;right:0;">
         <div style="margin-left: 100px;float:left;background-color: orange; width: 246px; height: 26px;padding:2px;font-weight: bolder;">epi</div>
         <a style="padding:6px;font-size:15px" href="index.html">Inicio</a>
         <a style="padding:6px;font-size:15px" href="docs.html">Docs</a>
+        <a style="padding:6px;font-size:15px" href="deprecated.html">Deprecated</a>
+        <a style="padding:6px;font-size:15px" href="relasenotes.html">Relase Notes</a>
     </header>
-    <article style="padding:12px">
+    
+    <article style="padding:12px;position:absolute ; top:60px;z-index: -1;">
+        <div style="margin:-12px;background: linear-gradient(45deg,  #f400cb 0%,#00f9d8 33%,#f97400 66%,#4ad600 100%);width: 100%;height: 100px;position: fixed;right: 0;left: 0;top:70px;">
+            <h3 style="text-align: center;">epi v_1.0 is avaiable!</h3>
+            <p style="text-align: center;"><a download="epi_compiler_v_1.0_win64.exe" href="https://elitees.github.io/epi/epi_compiler_v_1.0.exe">Download</a>, <a href="relasenotes.html">Relase Notes</a></p>
+        </div>
+        <div style="height: 80px;"></div>
         <h1>Downloads:</h1>
         <div style="padding-left: 12px;">
-            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.rev1:</h3>
+            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_1.0:</h3>
+            <ul id="v_1.0">
+                <li><a download="epi_compiler_v_1.0_win64.exe" href="https://elitees.github.io/epi/epi_compiler_v_0.rev1.exe">epi_compiler_v_1.0_win64.exe</a> - Support until 1-01-23 (01-1-23 in english)</li>
+            </ul>
+            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.rev1 <code style="font-size: 15px;background-color: rgb(255, 187, 0);border-radius: 12px;padding: 5px;">Pre-Relase</code>:</h3>
             <ul id="v_0.rev1">
                 <li><a download="epi_compiler_v_0.rev1.exe" href="https://elitees.github.io/epi/epi_compiler_v_0.rev1.exe">epi_compiler_v_0.rev1.exe</a> - No support (Pre-Relase)</li>
             </ul> 
-            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.3:</h3>
+            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.3 <code style="font-size: 15px;background-color: rgb(255, 187, 0);border-radius: 12px;padding: 5px;">Pre-Relase</code>:</h3>
             <ul id="v_0.3">
                 <li><a download="https://elitees.github.io/epi/epi_v_0.2_compiler_setup.exe" href="https://elitees.github.io/epi/epi_compiler_v_0.3_setup.exe">epi_compiler_v_0.3_setup.exe</a> - No support (Pre-Relase)</li>
             </ul> 
-            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.2:</h3>
+            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.2 <code style="font-size: 15px;background-color: rgb(255, 187, 0);border-radius: 12px;padding: 5px;">Pre-Relase</code>:</h3>
             <ul id="v_0.2">
                 <li><a download="https://elitees.github.io/epi/epi_v_0.2_compiler_setup.exe" href="https://elitees.github.io/epi/epi_v_0.2_compiler_setup.exe">epi_v_0.2_compiler_setup.exe</a> - No support (Pre-Relase)</li>
             </ul> 
-            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.1:</h3>
+            <h3 style="width: 45%;padding:6px; border-bottom: 2px solid rgb(57, 57, 57);">v_0.1 <code style="font-size: 15px;background-color: rgb(255, 187, 0);border-radius: 12px;padding: 5px;">Pre-Relase</code>:</h3>
             <ul id="v_0.1">
                 <li><a download="https://elitees.github.io/epi/epi.exe" href="https://elitees.github.io/epi/epi.exe">epi.exe</a> - No support (Pre-Relase)</li>
             </ul> 
         </div>
+        <div style="height: 170px;"></div>
     </article>
     <footer>
         <div style="float: left;">
