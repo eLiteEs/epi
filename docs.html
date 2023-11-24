@@ -148,7 +148,9 @@ tr:nth-child(even) {
                 <p onclick="showOne('i21')">Visual Elements</p>
                 <p onclick="showOne('i22')">Random</p>
                 <p onclick="showOne('i23')">Variable Functions</p>
-                <p onclick="showOne('i24')">Char functions</p>
+                <p onclick="showOne('i24')">Boolean functions</p>
+                <p onclick="showOne('i25')">Char functions</p>
+                <p onclick="showOne('i26')">Arrays</p>
                 <p onclick="showOne('i666')">Epi examples in depth</p>
             </div>
             <div id="container" style="margin-left:150px;float: left;width: fit-content; padding: 10px;max-width: 75%;overflow-x: scroll;">
@@ -156,7 +158,7 @@ tr:nth-child(even) {
                     <h3>Documents</h3>
                     <p>Here you can view some tutorials of how to code in epi.</p>
                     <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Recomended version: v_1.0 or higher. It has important bugfix, implementations, and accesibility.</p>    
-                    <p style="padding: 12px;border-left:4px solid rgb(0, 110, 161);background-color: rgba(0, 166, 255, 0.538);"><b>Info:</b> If you want, you can see a few examples of whta you can do with epi <a href="#" onclick="showOne('i666')">here</a>.</p>    
+                    <p style="padding: 12px;border-left:4px solid rgb(0, 110, 161);background-color: rgba(0, 166, 255, 0.538);"><b>Info:</b> If you want, you can see a few examples of what you can do with epi <a href="#" onclick="showOne('i666')">here</a>.</p>    
                     
                 </div>
                 <div id="i2">
@@ -223,8 +225,25 @@ tr:nth-child(even) {
                 <div id="i5">
                     <h3>In</h3>
                     <p><code>in</code> is a comamnd to get a user input.</p>
-                    <p>Added in: v_0.1</p>
+                    <p>Added in: v_0.1, Updated in: v_1.1</p>
                     <blockText>
+                        <h3>Usage on v_1.1^</h3>
+                        <p>Now you can call <code>in</code> function using <code>inx</code> function.</p>
+                        <p>Example:</p>
+                        <code>print("Hello, " + inx())</code>
+                        <p>Output:</p>
+                        <code><code>mr. Meow</code><br>Hello, mr. Meow</code>
+                        <p>As you can see, <code>inx</code> function is replaced by a user-input.</p>
+                        <p>You can also add more than one <code>inx</code> in the same line, but it doesn't look good.</p>
+                        <p>Example:</p>
+                        <code>print("Hello, " + inx() + ", how are you today? " + inx())</code>
+                        <p>Output:</p>
+                        <code>
+                            <code>mr. cat</code><br>
+                            <code>meow</code><br>
+                            Hello, mr. cat, how are you today? meow
+                        </code>
+                        <hr>
                         <h3>Usage on v_0.1^</h3>
                         <code>in(message, (variable)saveIn)</code>
                         <p>Example: <br><code>var username null<br>in("Enter username: ", "username")</code></p>
@@ -845,6 +864,14 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                               <th style="background-color: rgb(88, 88, 88);">Output</th>
                             </tr>
                             <tr>
+                                <td><code>=</code></td>
+                                <td>String</td>
+                                <td>Modifies the String content</td>
+                                <td>nothing</td>
+                                <td><code>var greeting Good Morning<br>greeting = "Good Afternoon"<br>print(var(greeting))</code></td>
+                                <td><code>Good Afternoon</td>
+                            </tr>
+                            <tr>
                                 <td><code>substr</code></td>
                                 <td>String</td>
                                 <td>Cuts the string using the two arguments and sets it to the variable</td>
@@ -1040,6 +1067,111 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                         <code>var function null<br>openFunction("function")<br>print("hi")<br>closeFunction()<br>function()</code>
                         <p>Output:</p>
                         <code>hi</code>
+                    </block>
+                </div>
+                <div id="i24">
+                    <h3>Boolean Functions</h3>
+                    <p>This are functions with different funcionalities thta return <code>1</code> if true and <code>0</code> if false.</p>
+                    <p>Added in: v_1.0 (I didn't marked it on relase notes but it works on this version)</p>
+                    <blockText>
+                        <h3>Usage on v_1.0^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            // First we will compare a few Strings<br>
+                            var str1 hello<br>
+                            var str2 bye<br>
+                            var str3 hello<br>
+                            print("str1 == str3: " + ieq(var(str1), var(str3)))<br>
+                            print("str1 == str2: " + ieq(var(str1), var(str2)))<br>
+                            print("str1 != str3: " + inq(var(str1), var(str3)))<br>
+                            print("str1 != str2: " + inq(var(str1), var(str2)))<br>
+                            // Now we're going to compare numbers<br>
+                            var num1 1<br>
+                            var num2 2<br>
+                            var num3 3<br>
+                            var num4 4<br>
+                            print("num1 < num2: " + ilt(var(num1), var(num2)))<br>
+                            print("num1 <= num2: " + ilq(var(num1), var(num2)))<br>
+                            print("num4 > num3: " + ihi(var(num4), var(num3)))<br>
+                            print("num4 >= num3: " + ihq(var(num4), var(num3)))<br>
+                            print("num1 > num2: " + ihi(var(num1), var(num2)))<br>
+                            print("num1 >= num2: " + ihq(var(num1), var(num2)))<br>
+                            print("num4 < num3: " + ilt(var(num4), var(num3)))<br>
+                            print("num4 <= num3: " + ilq(var(num4), var(num3)))<br>
+                        </code>
+                        <p>Output:</p>
+                        <code>
+                            str1 == str3: 1<br>
+                            str1 == str2: 0<br>
+                            str1 != str3: 0<br>
+                            str1 != str2: 1<br>
+                            num1 < num2: 1<br>
+                            num1 <= num2: 1<br>
+                            num4 > num3: 1<br>
+                            num4 >= num3: 1<br>
+                            num1 > num2: 0<br>
+                            num1 >= num2: 0<br>
+                            num4 < num3: 0<br>
+                            num4 <= num3: 0<br>
+                        </code>
+                    </block>
+                </div>
+                <div id="i25">
+                    <h3>Char Functions</h3>
+                    <p>This functions are usseful for working with chars.</p>
+                    <p>Added in: v_1.1</p>
+                    <blockText>
+                        <h3>Usage on v_1.1^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            // First we will declarate the storing variable<br>
+                            var output1 null<br>
+                            var output2 null<br>
+                            // Now we will get character with code 200 and save it on output1<br>
+                            getchN(100, "output1")<br>
+                            // And now we get the code form the character 'a'<br>
+                            getchC("a", "output2")<br>
+                            // Lets check the result<br>
+                            print("(char)200: " + var(output1))<br>
+                            print("(int)'a': " + var(output2))<br>
+                        </code>
+                        <p>Output:</p>
+                        <code>
+                            (char)200: d<br>
+                            (int)'a': 97
+                        </code>
+                    </block>
+                </div>
+                <div id="i26">
+                    <h3>Arrays</h3>
+                    <p>With arrays you can store items inside a variable.</p>
+                    <p>Added in: v_1.1</p>
+                    <blockText>
+                        <h3>Usage on v_1.1^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            var arr null<br>
+                            initArr("arr", 10)<br>
+                            editArr("arr", 2, "good morning")<br>
+                            editArr("arr", 2, "sweet nights")<br>
+                            print(getArr("arr", 2))<br>
+                            // This should print "sweet nights"<br>
+                        </code>
+                        <p>Output:</p>
+                        <code>
+                            sweet nights
+                        </code>
+                        <p>Explanation:</p>
+                        <p><code>initArr()</code>:</p>
+                        <p>initArr(<b>"arr"</b>, 10) - This selects the variable to transform into an Array.</p>
+                        <p>initArr("arr", <b>10</b>) - This selects the length of the array.</p>
+                        <p><code>editArr()</code>:</p>
+                        <p>editArr(<b>"arr"</b>, 2, "good morning") - This selects the Array to edit.</p>
+                        <p>editArr("arr", <b>2</b>, "good morning") - This selects the index of the Array to modify.</p>
+                        <p>editArr("arr", 2, <b>"good morning"</b>) - This is the text to add in the specified index.</p>
+                        <p><code>getArr()</code>:</p>
+                        <p>print(getArr(<b>"arr"</b>, 2)) - This selects the array to read.</p>
+                        <p>print(getArr("arr", <b>2</b>)) - This selects the index to read.</p>
                     </block>
                 </div>
                 <div id="i666">
