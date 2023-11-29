@@ -151,6 +151,10 @@ tr:nth-child(even) {
                 <p onclick="showOne('i24')">Boolean functions</p>
                 <p onclick="showOne('i25')">Char functions</p>
                 <p onclick="showOne('i26')">Arrays</p>
+                <p onclick="showOne('i27')">"import" Command</p>
+                <p onclick="showOne('i28')">"utils.epi" file</p>
+                <p onclick="showOne('i29')">"sleep" Command</p>
+                <p onclick="showOne('i30')">Epi Variables</p>
                 <p onclick="showOne('i666')">Epi examples in depth</p>
             </div>
             <div id="container" style="margin-left:150px;float: left;width: fit-content; padding: 10px;max-width: 75%;overflow-x: scroll;">
@@ -254,14 +258,18 @@ tr:nth-child(even) {
                 <div id="i6">
                     <h3>Var</h3>
                     <p><code>var</code> command works for store information as a string.</p>
-                    <p>Added in: v_0.1, Updated in: v_1.0</p>
+                    <p>Added in: v_0.1, Updated in: v_1.0, v_1.2</p>
                     <blockText>
-                        <h3>Usage on v_1.0^</h3>
-                        <p style="padding: 12px;border-left:4px solid rgb(161, 72, 0);background-color: rgba(255, 140, 0, 0.538)">Deprecated: <code>setva</code> function is not neccesary(v_1.0^), you can use <a href="#" onclick="showOne('i20')">String Methods</a> to know how to edit variables. See <a href="deprecated.html">deprecated</a> lib to view more information.</p>    
+                        <h3>Usage on v_1.2^</h3>
+                        <p>Using string methods you can get values via <code>myVariable.getValue()</code></p>
+                        <p>Also we tried to fix String Methods for making a new value to the String but we couldn't finish it.</p>
+                        <hr>
+                        <h3>Usage on v_1.0-v_1.1</h3>
                         <h4>Modifing var values</h2>
                         <code>var myVariable null<br>print("Old: " + var(myVariable))<br>setva("myVariable", "hi")<br>print("New: " + var(myVariable))</code>
                         <p>Output:</p>
                         <code>Old: null<br>New: hi</code>
+                        <hr>
                         <h3>Usage on v_0.1-v_0.rev1</h3>
                         <code>var name value</code>
                         <p>Example: <code>var user null</code></p>
@@ -422,8 +430,19 @@ tr:nth-child(even) {
                     <p>You can create dialogs to warn the user of something visually or getting userinput.</p>
                     <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
             
-                    <p>Added in: v_0.rev1, Updated in: v_1.0</p>
+                    <p>Added in: v_0.rev1, Updated in: v_1.0, v_1.2</p>
                     <blockText>
+                        <h3>Usage on 1.2:</h3>
+                        <p>Now with <code>gui.showMessageOptions</code>, <code>gui.showErrorOptions</code> and <code>gui.showWarningOptions</code> you can create dialogs with more buttons and also store output as a number(index) or get <code>-1</code> if the user closed the dialog.</p>
+                        <p>Example:</p>
+                        <code>
+                            var output null<br>
+                            gui.showMessageOptions("Select_an_option Select Print0~Print1~Print2", "output")<br>
+                            print(output.getValue())
+                        </code>
+                        <p>Output:</p>
+                        <img src="img5.png">
+                        <hr>
                         <h3>Usage on 1.0:</h3>
                         <p>Is the same but now you can put spaces on dialogs.</p>
                         <p>Example: </p>
@@ -434,17 +453,17 @@ tr:nth-child(even) {
                         <p>There are three types of dialogs:<br><code>showMessage</code> A dialog with an info icon<br><code>showWarning</code> A dialog with an warning icon<br><code>showError</code> A dialog with an error icon</p>
                         <p>Here is the use:</p>
                         <h5><code>showMessage</code>:</h5>
-                        <code>var output null<br>// output variable might be required to trobleshotign<br>gui.showMessage("message title", "output")</code>
+                        <code>var output null<br>// output variable might be required to troubleshotign<br>gui.showMessage("message title", "output")</code>
                         <p>Output:</p>
                         <img src="img1.png">
                         <h5><code>showWarning
                         </code>:</h5>
-                        <code>var output null<br>// output variable might be required to trobleshotign<br>gui.showWarning("message title", "output")</code>
+                        <code>var output null<br>// output variable might be required to troubleshotign<br>gui.showWarning("message title", "output")</code>
                         <p>Output:</p>
                         <img src="img2.png">
                         <h5><code>showError
                         </code>:</h5>
-                        <code>var output null<br>// output variable might be required to trobleshotign<br>gui.showError("message title", "output")</code>
+                        <code>var output null<br>// output variable might be required to troubleshotign<br>gui.showError("message title", "output")</code>
                         <p>Output:</p>
                         <img src="img3.png">
                         <h4>Create UserInput Dialogs</h4>
@@ -851,9 +870,19 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                 <div id="i20">
                     <h3>String Methods</h3>
                     <p>Now you can modify strings using String Methods</p>
-                    <p>Added in: v_1.0</p>
+                    <p>Added in: v_1.0, Updated in: v_1.2</p>
                     <blockText>
-                        <h3>Usage on v_1.0^</h3>
+                        <h3>Usage on: v_1.2^</h3>
+                        <p>It's actually the same but instead of calling them as a function you can call the like this:</p>
+                        <code>
+                            var myString Hello World!<br>
+                            print(<b style="font-family: monospace;">myString.length()</b>)
+                        </code>
+                        <p>Output: </p>
+                        <code>12</code>
+                        <p>We also deleted <code>delStr</code> function because they are the same as <code>.replace("myQuery", "").</code></p>
+                        <hr>
+                        <h3>Usage on v_1.0 -> v_1.1</h3>
                         <table>
                             <tr>
                               <th style="background-color: rgb(88, 88, 88);">Name</th>
@@ -868,7 +897,7 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                                 <td>String</td>
                                 <td>Modifies the String content</td>
                                 <td>nothing</td>
-                                <td><code>var greeting Good Morning<br>greeting = "Good Afternoon"<br>print(var(greeting))</code></td>
+                                <td><code>var greeting Good Morning<br>greeting="Good Afternoon"<br>print(var(greeting))</code></td>
                                 <td><code>Good Afternoon</td>
                             </tr>
                             <tr>
@@ -876,7 +905,7 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                                 <td>String</td>
                                 <td>Cuts the string using the two arguments and sets it to the variable</td>
                                 <td><code>IntegerOrString</code>, <code>WhoaBigger</code> or <code>IndexOutOfBounds</code></td>
-                                <td><code>var greeting Good Morning<br>greeting.substr(0,5)<br>print(var(greeting))</code></td>
+                                <td><code>var greeting Good Morning<br>greeting.substr(0,5)</code></td>
                                 <td><code>Good </td>
                             </tr>
                             <tr>
@@ -1000,10 +1029,29 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                     <h3>Visual Elements</h3>
                     <p>This commands could help the user to read better your program.</p>
                     <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Some commands like <code>puc</code> don't work in professional cmd(old one), use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>    
-                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> <code>gotoxy</code> command doesn't work in professional cmd(old one) becose uit uses a special character to move the cursor, use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>    
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> <code>gotoxy</code> command doesn't work in professional cmd(old one) because uit uses a special character to move the cursor, use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>    
                     
-                    <p>Added in: v_1.0</p>
+                    <p>Added in: v_1.0, Updated in: v_1.2</p>
                     <blockText>
+                        <h3>Usage on v_1.2^</h3>
+                        <p><code>cmwSizeX</code> and <code>cmwSizeY</code> commands:</p>
+                        <p>With this commands you can get the screen resulution as chars.</p>
+                        <p><code>main.epi</code> file:</p>
+                        <code>// First define the variables to store the data<br>
+                            var xRes null<br>
+                            var yRes null<br>
+                            // Now we call the cmwSizeX and cmwSizeY commands for getting the resolution<br>
+                            cmwSizeX("xRes")<br>
+                            cmwSizeY("yRes")<br>
+                            // Print the result<br>
+                            print("Chars for width: " + var(xRes))<br>
+                            print("Chars for height: " + var(yRes))<br></code>
+                        <p>Output:</p>
+                        <code>
+                            Chars for width: 188<br>
+                            Chars for height: 23<br>
+                        </code>
+                        <hr>
                         <h3>Usage on v_1.0^</h3>
                         <p><code>puc</code> command:</p>
                         <p>With this command you can change the terminal color.</p>
@@ -1028,6 +1076,7 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                         <code>
                             <b style="background-color: red;font-weight: normal;">a</b>
                         </code>
+                        <p>You can use <code>reset</code> color for reseting the output color.</p>
                         <hr>
                         <p><code>clear</code> command:</p>
                         <p>Clear command can be used for cleaning all the text on the screen.</p>
@@ -1174,6 +1223,89 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                         <p>print(getArr("arr", <b>2</b>)) - This selects the index to read.</p>
                     </block>
                 </div>
+                <div id="i27">
+                    <h3>Import from external files</h3>
+                    <p>If you're the kind of perosn who likes having one function in each file, <code>import</code> function would be the favourite for you.</p>
+                    <p>With this command you can import variables, functions and also run code from other <code>.epi</code> file.</p>
+                    <p>Added in: v_1.2</p>
+                    <blockText>
+                        <h3>Usage on v_1.2^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            import("sayhi.epi")<br>
+                            sayHi()
+                        </code>
+                        <p><code>sayhi.epi</code> file:</p>
+                        <code>
+                            var sayHi null<br>
+                            openFunction("sayHi")<br>
+                            print("I'm saying hi")<br>
+                            closeFunction()<br>
+                        </code>
+                        
+                        <p>Output:</p>
+                        <code>
+                            I'm saying hi
+                        </code>
+                    </block>
+                </div>
+                <div id="i28">
+                    <h3>Import from <code>utils.epi</code> file</h3>
+                    <p>In this file we've wroten some functions on epi for you to don't writing them again.</p>
+                    <p>Added in: v_1.2</p>
+                    <blockText>
+                        <h3>Usage on v_1.2^</h3>
+                        <h4><code>prog.pause()</code> function:</h4>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            import("utils.epi")<br>
+                            prog.pause()
+                        </code>
+                        
+                        <p>Output:</p>
+                        <code>
+                            Press any key to continue . . .
+                        </code>
+                    </block>
+                </div>
+                <div id="i29">
+                    <h3><code>sleep</code> command.</h3>
+                    <p>With this command you can determinate how much miliseconds you want to stop the program.</p>
+                    <p>Added in: v_1.2</p>
+                    <blockText>
+                        <h3>Usage on v_1.2^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            print("I'm back in two seconds. . .")<br>
+                            sleep(2000)<br>
+                            print("I'm back!")
+                        </code>
+                        
+                        <p>Output:</p>
+                        <code>
+                            I'm back in two seconds. . .<br>
+                            I'm back!
+                        </code>
+                    </block>
+                </div>
+                <div id="i30">
+                    <h3>Epi Variables</h3>
+                    <p>This variables are for you to getting information about the program.</p>
+                    <p>You can modify them at <code>C:/Program Files(x86)/epi-v_yourepiversion/var.epivar</code> file.</p>
+                    <p>Added in: v_1.2</p>
+                    <blockText>
+                        <h3>Usage on v_1.2^</h3>
+                        <p><code>main.epi</code> file:</p>
+                        <code>
+                            print("Epi path: " + %EPIPATH%)
+                        </code>
+                        
+                        <p>Output:</p>
+                        <code>
+                            C:/Program Files(x86)/epi-v_yourepiversion/
+                        </code>
+                    </block>
+                </div>
                 <div id="i666">
                     <h3>Examples</h3>
                     <p>Here you can view some games and programs that I made with epi.</p>
@@ -1243,7 +1375,7 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
         }
 
         document.querySelectorAll("#container div").forEach(div => div.style.display = "none");
-        document.getElementById("i1").style.display = "";
+        document.getElementById("i20").style.display = "";
         document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
         document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
         document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
