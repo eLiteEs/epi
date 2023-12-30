@@ -160,6 +160,51 @@ tr:nth-child(even) {
         <div >
             <div style="background-color: rgba(37, 37, 37, 0.8); height: 100%; width: 250px;float:left;max-height: calc(100% - (150px + 60px + 50px)); overflow-y: scroll;" list>
                 <ul id="myUL" style="list-style-type: none;padding: 5px;">
+                    <li><p class="caret" reference>v_1.luc2</p>
+                        <ul class="nested">
+                            <p onclick="showOne('i63')">What is epi?</p>
+                            <p onclick="showOne('i95')">Install epi v_1.luc2</p>
+                            <p reference>How to use it —</p>
+                            <p onclick="showOne('i65')">Compile a file</p>
+                            <p reference>Tutorials —</p>
+                            <p onclick="showOne('i66')">print</p>
+                            <p onclick="showOne('i67')">User Input</p>
+                            <p onclick="showOne('i77')">cmos</p>
+                            <p>
+                                <ul style="list-style-type: none; margin:none;padding: 0%;color: rgb(205, 205, 205)!important;">
+                                    <li><span class="caret">Working with variables</span>
+                                    <ul class="nested" style="list-style-type: none; color: rgb(205, 205, 205)!important;padding-left:15px">
+                                        <li onclick="showOne('i69')"><p>Numbers</p></li>
+                                        <li onclick="showOne('i70')"><p>Strings</p></li>
+                                        <li onclick="showOne('i71')"><p>Booleans</p></li>
+                                        <li onclick="showOne('i72')"><p>Files</p></li>
+                                        <li onclick="showOne('i73')"><p>Functions</p></li>
+                                    </ul></li>
+                                </ul>
+                            </p>
+                            <p onclick="showOne('i74')">File Working</p>
+                            <p onclick="showOne('i75')">Time and Date</p>
+                            <p onclick="showOne('i76')">Get Char</p>
+                            <p onclick="showOne('i78')">Print Compact</p>
+                            <p onclick="showOne('i79')">Networking</p>
+                            <p onclick="showOne('i80')">Functions</p>
+                            <p onclick="showOne('i81')">Dialogs</p>
+                            <p onclick="showOne('i82')">Loops</p>
+                            <p onclick="showOne('i83')">If</p>
+                            <p onclick="showOne('i84')">Images</p>
+                            <p onclick="showOne('i85')">Working with Internet Files</p>
+                            <p onclick="showOne('i86')">String Working</p>
+                            <p onclick="showOne('i87')">Visual Elements</p>
+                            <p onclick="showOne('i88')">Random Numbers</p>
+                            <p onclick="showOne('i89')">Boolean Functions</p>
+                            <p onclick="showOne('i90')">Char Functions</p>
+                            <p onclick="showOne('i91')">Arrays</p>
+                            <p onclick="showOne('i92')">"import" Command</p>
+                            <p onclick="showOne('i93')">Sleep Command</p>
+                            <p onclick="showOne('i94')">Arguments</p>
+                        </ul>
+                    </li>
+                    
                     <li><p class="caret" reference>v_1.luc1</p>
                         <ul class="nested">
                             <p onclick="showOne('i32')">What is epi?</p>
@@ -2088,6 +2133,728 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                 </div>
 
 
+                <div id="i63">
+                    <h3>What is epi?</h3><hr>
+                    <p>Epi is an easy programming language made in C++ using eLite NT code. It's light and easy to understand. <br>It is updated every month with major upgrades.<br> I wish you like it ;)</p>
+                </div>
+                <div id="i95">
+                    <h3>Install epi v_1.luc1</h3><hr>
+                    
+                    <ol>
+                        <li>Download epi v_1.luc2 in <a href="download.html">download</a> page.</li>
+                        <li>Run the setup. It may warn you that our software is insecure(It isn't). Click on Show details and run anyways.</li>
+                        <li>Select for who do you want to install epi.</li>
+                        <li>Select the language to install.</li>
+                        <li>Read and accept the license.</li>
+                        <li>Read important info about epi.</li>
+                        <li>Select where tp install epi(I don't recommend you touching it because epi is prepared to be installed at a single location)</li>
+                        <li>Select if you want to create desktop shortcut to epi.</li>
+                        <li>Click on install.</li>
+                        <li>Click on run epi and close. Check if you have the last version installed and run "nowwhat".</li>
+                        <li>Complete all the tests.</li>
+                        <li>If you have done all the things it asked for you, epi should be configurated and ready to use!</li>
+                    </ol>
+                </div>
+                <div id="i65">
+                    <h3>How to compile a file</h3><hr>
+                    <p>In this tutorial I'll show you how to compile a <code>.epi</code> file.</p>
+                    <hr>
+                    <ol>
+                        <li>Create a file called <code>hello.epi</code> in your preferred code editor.</li>
+                        <li>On it write <code>print("Hello World!")</code></li>
+                        <li>Open terminal and go to your folder in where you created your <code>.epi</code> file.</li>
+                        <li>Write <code>epi hello.epi</code> and press enter.</li>
+                        <li>And that's how do you create and compile an <code>.epi</code> file.</li>
+                    </ol>
+                </div>
+                <div id="i66">
+                    <h3>Print command</h3><hr>
+                    <p>You can use the <code>print</code> command to print text on the screen.</p>
+                    <p>Example:</p>
+                    <code>print("Hello World!")</code>
+                </div>
+                <div id="i67">
+                    <h3>User Input</h3><hr>
+                    <p>You can use the <code>in</code> commands to get some text the user entered.</p>
+                    <p><code>in</code> Example:</p>
+                    <code>String username<br>in("Enter username:", "username")<br>print("Hello, " + str(username))</code>
+                    <p>You can use the <code>in</code> command for all types of variables.</p>
+                </div>
+                <div id="i69">
+                    <h3>Variables - Numbers</h3><hr>
+                    <p>You can use the <code>Number</code> keyword for creating a variable which contains numbers.</p>
+                    <p><code>Number</code> Example:</p>
+                    <code>Number myInt = 89<br>
+                        print("Old Value: " + @myInt)
+                        setva("myInt", "1")<br>
+                        print("myInt Value: " + num(myInt))</code>
+                    </div>
+                <div id="i70">
+                    <h3>Variables - Strings</h3><hr>
+                    <p>You can use the <code>String</code> keyword for creating a variable which contains text or a character.</p>
+                    <p><code>String</code> Example:</p>
+                    <code>String myString<br>
+                        setva("myString", "Hello World!")<br>
+                        print("myString Value: " + str(myString))</code>
+                    <p><code>setva</code> function updates the value of the variable.</p>
+                </div>
+                <div id="i71">
+                    <h3>Variables - Booleans</h3><hr>
+                    <p>You can use the <code>boolean</code> keyword for creating a variable which contains <code>0</code> or <code>1</code>.</p>
+                    <p><code>boolean</code> Example:</p>
+                    <code>boolean myBoolean<br>
+                        setva("myBoolean", "1")<br>
+                        print("myBoolean Value: " + bol(myBoolean))</code>
+                    <p><code>setva</code> function updates the value of the variable.</p>
+                </div>
+                <div id="i72">
+                    <h3>Variables - Files</h3><hr>
+                    <p>You can use the <code>File</code> keyword for creating a variable which contains data for working with files.</p>
+                    <p><code>File</code> Example:</p>
+                    <code>File myFile</code>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You will learn how to work with files in the <a href="#" onclick="showOne('i41')">File Working</a> section.</p>    
+                </div>
+                <div id="i73">
+                    <h3>Variables - Functions</h3><hr>
+                    <p>You can use the <code>function</code> keyword for creating a runneable function.</p>
+                    <p><code>function</code> Example:</p>
+                    <code>function myFunction</code>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You will learn how to work with files in the <a href="#" onclick="showOne('i46')">Functions</a> section.</p>    
+                </div>
+                <div id="i74">
+                    <h3>File Working</h3><hr>
+                    <p>With this functions you can read, write or delete files.</p>
+                    <hr>
+                    <h4>Writing on a file</h4>
+                    <p>For writing on a file you need to create a <code>File</code> variable and open the file which you want to write.</p>
+                    <p>Example:</p>
+                    <code>
+                        File myFile<br>
+                        myFile.open("hello.txt")<br>
+                        myFile.write("Hello World!")
+                    </code>
+                    <p>That should create a file named <code>hello.txt</code> and write inside it <code>Hello World!</code>.</p>
+                    <hr>
+                    <h4>Reading a file</h4>
+                    <p>For reading a file you need to open the file and call a function that reads the file.</p>
+                    <p>If you runned the last code you might not have errors but if not create a file called <code>hello.txt</code> and write inside it whathever you want.</p>
+                    <p>Example:</p>
+                    <code>
+                        File myFile<br>
+                        myFile.open("hello.txt")<br>
+                        print("hello.txt contents: " + myFile.read())
+                    </code>
+                    <hr>
+                    <h4>Reading a line form a file and writing multiline files</h4>
+                    <p>Using <code>\n</code> character you can make a new line in a file while writing it. Using <code>.readLine()</code> function you can select which line do you want to read from the file.</p>
+                    <p>Example:</p>
+                    <code>
+                        File myFile<br>
+                        myFile.open("hello.txt")<br>
+                        myFile.write("good\nmorning\nto\nyou")<br>
+                        print(myFile.readLine(3))
+                    </code>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You can't use <code>.readLine</code> twice in a line. Run it one time in a variable and then concatenate them.</p>    
+                
+                    <hr>
+                    <h4>Deleting files</h4>
+                    <p>You can also delete files using <code>.delete()</code> function.</p>
+                    <p>Example:</p>
+                    <code>
+                        File myFile<br>
+                        myFile.open("hello.txt")<br>
+                        myFile.delete()
+                    </code>
+                </div>
+                <div id="i75">
+                    <h3>Time Functions</h3><hr>
+                    <p>With this functions you can get time and date easily.</p>
+                    <hr>
+                    <h4>Getting all the date as this format: HH:MM.SS,MMM DD/MM/YY</h4>
+                    <p>Example:</p>
+                    <code>print(date.getHours() + ":" + date.getMinutes() + "." + date.getSeconds() + "," + date.getMilliseconds() + " " + date.getDay() + "/" + date.getMonth() + "/" + date.getYear())</code>
+                    <p>Output:</p>
+                    <code>17:29.43,878 14/12/2023</code>
+                </div>
+                <div id="i76">
+                    <h3>Getch Function</h3><hr>
+                    <p>With this function you make the program wait until user press one key and get which key pressed.</p>
+                    <p>Example:</p>
+                    <code>
+                        print("Waiting to user press a key. . .")<br>
+                        print("User pressed: " + getch())
+                    </code>
+                </div>
+                <div id="i78">
+                    <h3>Print Compact</h3><hr>
+                    <p>This function is like <code>print</code> function but it doesn't create a new line after printing.</p>
+                    <p>Example:</p>
+                    <code>
+                        printc("good ")<br>
+                        print("morning")
+                    </code>
+                    <p>Output:</p>
+                    <code>
+                        good morning
+                    </code>
+                </div>
+                <div id="i79">
+                    <h3>Networking</h3><hr>
+                    <p>With this functions you can send text between computers. This is usseful if you want to create an instant messaging program.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                    
+                    <hr>
+                    <h4>Creating a "server" to recieve text</h4>
+                    <p>Using <code>netw.createServer</code> you create a connection using a port and store the message in a variable, in this case <code>txt</code>.</p>
+                    <p>Example <code>Main.epi</code>:</p>
+                    <code>
+                        String txt<br>
+                        netw.createServer("2567", "txt")<br>
+                        print("Recieved text: " + str(txt))
+                    </code><hr>
+                    <h4>Sending text to the server</h4>
+                    <p>Using <code>netw.createConection</code> you can send some text to the server you created. In this case <code>hi</code> is the message to be sent and <code>2567</code> is the port where you created the server. The text <code>supersecretip</code> is the ip from where you created the connection.</p>
+                    <p>Example <code>Send.epi</code>:</p>
+                    <code>
+                        String text<br>
+                        netw.createConection("2567 supersecretip hi", "text")
+                    </code>
+                </div>
+                <div id="i77">
+                    <h3>Cmos</h3><hr>
+                    <p>With this function you can run cmd commands.</p>
+                    <p>Syntax:</p>
+                    <code>
+                        cmos.commandToRun(arguments)
+                    </code>
+                    <p>Example:</p>
+                    <code>
+                        cmos.gcc("--version")
+                    </code>
+                    <p>Output:</p>
+                    <code>
+                        gcc.exe (Rev6, Built by MSYS2 project) 13.1.0
+                        Copyright (C) 2023 Free Software Foundation, Inc.
+                        This is free software; see the source for copying conditions. There is NO
+                        warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+                    </code>
+                </div>
+                <div id="i80">
+                    <h3>Functions</h3><hr>
+                    <p>Functions are variables which stores code to be runned when called.</p>
+                    <p>For define a function you need to use <code>function</code> keyboard and later start it.</p>
+                    <p>Example:</p>
+                    <code>
+                        function myFunction<br>
+                        myFunction.start()<br>
+                        print("hello")<br>
+                        closeFunction()<br>
+                        myFunction()
+                    </code>
+                </div>
+                <div id="i81">
+                    <h3>Dialogs</h3><hr>
+                    <p>With this functions you can create dialogs for the user pressing a button or making the user informating of something.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                    <hr>
+                    <h3>Creating normal dialogs</h3>
+                   
+                    <p>There are three types of dialogs:<br><code>showMessage</code> A dialog with an info icon<br><code>showWarning</code> A dialog with an warning icon<br><code>showError</code> A dialog with an error icon</p>
+                    <p>Here is the use:</p>
+                    <h5><code>showMessage</code>:</h5>
+                    <code>String output<br>// output variable might be required to troubleshotign<br>gui.showMessage("message title", "output")</code>
+                    <p>Output:</p>
+                    <img src="img1.png">
+                    <h5><code>showWarning
+                    </code>:</h5>
+                    <code>String output<br>// output variable might be required to troubleshotign<br>gui.showWarning("message title", "output")</code>
+                    <p>Output:</p>
+                    <img src="img2.png">
+                    <h5><code>showError
+                    </code>:</h5>
+                    <code>String output<br>// output variable might be required to troubleshotign<br>gui.showError("message title", "output")</code>
+                    <p>Output:</p>
+                    <img src="img3.png">
+                    <hr>
+                    <h3>Creating user-input dialogs</h3>
+                    <code>
+                        String username<br>
+                        // You can't enter spaces on dialogs (maybe later yes) *username variable stores the entered text<br>
+                        gui.requestInput("Username Login", "username")<br>
+                        print(str(username))
+                    </code>
+                    <p>Output:</p>
+                    <img src="img4.png">
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 161, 0);background-color: rgba(255, 255, 0, 0.538);">Note: You can add spaces to the dialogs by using <code>_</code> character.</p>    
+                    <hr>
+                    <h3>Creatign multi-awnser dialogs</h3>
+                    <p>Now with <code>gui.showMessageOptions</code>, <code>gui.showErrorOptions</code> and <code>gui.showWarningOptions</code> you can create dialogs with more buttons and also store output as a number(index) or get <code>-1</code> if the user closed the dialog.</p>
+                    <p>Example:</p>
+                    <code>
+                        String output<br>
+                        gui.showMessageOptions("Select_an_option Select Print0~Print1~Print2", "output")<br>
+                        print(output.getValue())
+                    </code>
+                    <p>Output:</p>
+                    <img src="img5.png">
+                </div>
+                <div id="i82">
+                    <h3>Loops</h3><hr>
+                    <p>With this loops you can run code the times you select.</p>
+                    <p>Example:</p>  
+                    <code>
+                        repeat(10, print("Hello World"))
+                    </code>                   
+                </div>
+                <div id="i83">
+                    <h3>If</h3><hr>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> This function wasn't prepared to be fixed in this function. Wait until v_1.luc2</p>                     
+                    <p>With this function you can run some code if the first argument is <code>1</code> that is true or run other code if <code>0</code> that is false.</p>
+                    <code>
+                        boolean true = 1<br>
+                        if(ieq(@true,1), print("true is 1"), print("true is other thing"))
+                    </code>
+                </div>
+                <div id="i84">
+                    <h3>Images</h3><hr>
+                    <p>In epi you can transform images to text by setting one character for each pixel's color.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                   
+                    <p>Example:</p>
+                    <code>
+                        String output<br>
+                        img.imageToTxt("icon.png", "output")<br>
+                        print(str(output))
+                    </code>
+                </div>
+                <div id="i85">
+                    <h3>Working with internet files</h3><hr>
+                    <p>You can read files that are uploaded on internet or you can select which line do you want to read of a file.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Java 21^ must be installed to use this function.</p>    
+                   
+                    <p>Examples:</p>
+                    <h4>Reading a internet file and save it to a String</h4>
+                    <code>
+                        String output<br>
+                        netw.readFileFromInternet("https://elitees.github.io/epi/", "output")<br>
+                        print(str(output))
+                    </code>
+                    <hr>
+                    <h4>Reading a line from a internet file</h4>
+                    <code>
+                        String output<br>
+                        // 2 sets the line to read<br> 
+                        netw.readLineFileFromInternet("https://elitees.github.io/epi/ 2", "output")<br>
+                        print(str(output))
+                    </code>
+                </div>
+                <div id="i86">
+                    <h3>Working with Strings</h3><hr>
+                    <p>There are some functions that return a value from a String.</p>
+                    <p>Here's a table for you to viewing them:</p>
+                    <table>
+                        <tr>
+                          <th style="background-color: rgb(88, 88, 88);">Name</th>
+                          <th style="background-color: rgb(88, 88, 88);">Returns</th>
+                          <th style="background-color: rgb(88, 88, 88);">Comments</th>
+                          <th style="background-color: rgb(88, 88, 88);">Throws</th>
+                          <th style="background-color: rgb(88, 88, 88);">Example</th>
+                          <th style="background-color: rgb(88, 88, 88);">Output</th>
+                        </tr>
+                        <tr>
+                            <td><code>setva</code></td>
+                            <td>String</td>
+                            <td>Modifies the String content</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String helloWorld<br>
+                                print("This prints nothing: " + str(helloWorld))<br>
+                                setva("helloWorld", "Hello World!")<br>
+                                print("New String content: " + str(helloWorld))
+                            </code></td>
+                            <td><code>
+                                This prints nothing: <br>
+                                New String content: Hello World!</td>
+                        </tr>
+                        <tr>
+                            <td><code>substring</code></td>
+                            <td>String</td>
+                            <td>Cuts the string using the two arguments and sets it to the variable</td>
+                            <td><code>IntegerOrString</code>, <code>WhoaBigger</code> or <code>IndexOutOfBounds</code></td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print(greeting.substring(0,5))<br>
+                            </code></td>
+                            <td><code>Hello</td>
+                        </tr>
+                        <tr>
+                            <td><code>find</code></td>
+                            <td>int</td>
+                            <td>Finds the argument on the variable</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print(greeting.find("o"))
+                            </code></td>
+                            <td><code>4</td>
+                        </tr>
+                        <tr>
+                                <td><code>index</code></td>
+                                <td>String</td>
+                                <td>Finds the character on the String using the index of the argument</td>
+                                <td><code>IntegerOrString</code> or <code>IndexOutOfBounds</code></td>
+                                <td><code>
+                                    String greeting<br>
+                                    setva("greeting", "Hello World!")<br>
+                                    print(greeting.index(4))<br>
+                                </code></td>
+                                <td><code>o</td>      
+                        </tr>
+                        <tr>
+                            <td><code>del</code></td>
+                            <td>String</td>
+                            <td>Makes the variable empty</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                greeting.del()<br>
+                                print("This prints nothing: " + str(greeting))
+                            </code></td>
+                            <td><code>This prints nothing: </code></td>      
+                        </tr>
+                        <tr>
+                            <td><code>add</code></td>
+                            <td>String</td>
+                            <td>Adds the String on a determinated position</td>
+                            <td><code>IntegerOrString</code> or <code>IndexOutOfBounds</code></td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print(greeting.add(12, " How are you doing today?"))
+                            </code></td>
+                            <td><code>Hello World! How are you doing today?</code></td>      
+                        </tr>
+                        <tr>
+                            <td><code>contains</code></td>
+                            <td>Boolean</td>
+                            <td>Checks if inside the variable there's the determinated String</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print("greeting contains 'Hello'?: " + greeting.contains("Hello"))<br>
+                                print("greeting contains 'Bye'?: " + greeting.contains("Bye"))
+                            </code></td>
+                            <td><code>
+                                greeting contains 'Hello'?: 1<br>
+                                greeting contains 'Bye'?: 0
+                            </code></td>      
+                        </tr>
+                        <tr>
+                            <td><code>encrypt</code></td>
+                            <td>String[en]</td>
+                            <td>Encrypts the variable using as key the argument</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print("Encrypted text: " + greeting.encrypt("mykey"))<br>
+                            </code></td>
+                            <td><code>Encrypted text: %∟      ▬M.♦↨§  X</code></td>      
+                        </tr>
+                        <tr>
+                            <td><code>decrypt</code></td>
+                            <td>String</td>
+                            <td>Decrypts the variable using the key specified on the arguments</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                String encryptedGreeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                setva("encryptedGreeting", greeting.encrypt("mykey"))<br>
+                                print("Encrypted text: " + greeting.encrypt("mykey"))<br>
+                                print("Decrypted text: " + encryptedGreeting.decrypt("mykey"))
+                            </code></td>
+                            <td><code>
+                                Encrypted text: %∟      ▬M.♦↨§  X<br>
+                                Decrypted text: Hello World!
+                            </code></td>      
+                        </tr>
+                        <tr>
+                            <td><code>isNum</code></td>
+                            <td>Boolean</td>
+                            <td>Checks if the variable is a number</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                String pi<br>
+                                setva("pi", "3.14")<br>
+                                print("'greeting' is a number?: " + greeting.isNum())<br>
+                                print("'pi' is a number?: " + pi.isNum())
+                            </code></td>
+                            <td><code>
+                                'greeting' is a number?: 0
+                                'pi' is a number?: 1
+                            </code></td>      
+                        </tr><tr>
+                            <td><code>isBool</code></td>
+                            <td>Boolean</td>
+                            <td>Checks if the variable is a boolean</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                String true<br>
+                                setva("true", 1)<br>
+                                print("'greeting' is a Boolean?: " + greeting.isBool())<br>
+                                print("'true' is a Boolean?: " + true.isBool())
+                            </code></td>
+                            <td><code>
+                                'greeting' is a Boolean?: 0<br>
+                                'true' is a Boolean?: 1
+                            </code></td>      
+                        </tr><tr>
+                            <td><code>isEmpty</code></td>
+                            <td>Boolean</td>
+                            <td>Checks if the variable is empty</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                String empty<br>
+                                setva("empty", str(greeting))<br>
+                                empty.del()<br>
+                                print("Is 'greeting' empty?: " + greeting.isEmpty())<br>
+                                print("Is 'empty' empty?: " + empty.isEmpty())
+                            </code></td>
+                            <td><code>
+                                Is 'greeting' empty?: 0<br>
+                                Is 'empty' empty?: 1
+                            </code></td>      
+                        </tr><tr>
+                            <td><code>replace</code></td>
+                            <td>String</td>
+                            <td>Replaces some text from the variable</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print(greeting.replace("World", "Universe"))
+                            </code></td>
+                            <td><code>Hello Universe!</code></td>      
+                        </tr><tr>
+                            <td><code>indize</code></td>
+                            <td>String[i]</td>
+                            <td>Splits the variable using a pattern</td>
+                            <td><code>IntegerOrString</code> or <code>IndexOutOfBounds</code></td>
+                            <td><code>
+                                String users
+                                setva("users", ";cat;dog;chicken;")
+                                print("User no.1: " + users.indize(";", 0))
+                            </code></td>
+                            <td><code>User no.1: cat</code></td>      
+                        </tr><tr>
+                            <td><code>length</code></td>
+                            <td>int</td>
+                            <td>Returns the length of the variable</td>
+                            <td>nothing</td>
+                            <td><code>
+                                String greeting<br>
+                                setva("greeting", "Hello World!")<br>
+                                print("Length of the String: " + greeting.length())
+                            </code></td>
+                            <td><code>Length of the String: 12</code></td>      
+                        </tr>
+                      </table>
+                </div>
+                <div id="i87">
+                    <h3>Visual Elements</h3><hr>
+                    <p>This commands could help the user to read better your program.</p>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> Some commands like <code>ws.color</code> don't work in professional cmd(old one), use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>    
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> <code>ws.goToXY</code> command doesn't work in professional cmd(old one) because uit uses a special character to move the cursor, use windows 11 terminal or Visual Studio Code<sup>(c)Microsoft</sup> integrated terminal.</p>                  
+                    <p>Examples:</p>
+                    <p><code>ws.color</code> command:</p>
+                    <p>With this command you can change the terminal color.</p>
+                    <p>For <b>text</b> color(is not neccesary to put which color is displayed):</p>
+                    <ul><li>red_text</li><li>blue_text</li><li>green_text</li><li>purple_text</li><li>yellow_text</li><li>black_text</li><li>cyan_text</li><li>white_text</li></ul>
+                    <p>Usage:</p>
+                    <p><code>ws.color(colorToBeDisplayed)</code></p>
+                    <p>Example:</p>
+                    <code>ws.color("red_text")<br>print("a")</code>
+                    <p>Output: </p>
+                    <code>
+                        <b style="color: red;font-weight: normal;">a</b>
+                    </code>
+                    <p>For <b>background</b> color:</p>
+                    
+                    <ul><li>red_background</li><li>blue_background</li><li>green_background</li><li>purple_background</li><li>yellow_background</li><li>black_background</li><li>cyan_background</li><li>white_background</li></ul>
+                    <p>Usage:</p>
+                    <p><code>ws.color(colorToBeDisplayed)</code></p>
+                    <p>Example:</p>
+                    <code>ws.color("red_background")<br>print("a")</code>
+                    <p>Output: </p>
+                    <code>
+                        <b style="background-color: red;font-weight: normal;">a</b>
+                    </code>
+                    <p>You can use <code>reset</code> color for reseting the output color.</p>
+                    <hr>
+                    <p><code>ws.clear</code> command:</p>
+                    <p>Clear command can be used for cleaning all the text on the screen.</p>
+                    <p>Example:</p>
+                    <code>print("a")<br>ws.clear()</code>
+                    <p>Output:</p>
+                    <code style="width: 50px;height: 40px;"></code>
+                    <hr>
+                    <p><code>ws.goToXY</code> command:</p>
+                    <p>When you run this command it moves the writing cursor to a determinated x and y.</p>
+                    <p>Example:</p>
+                    <code>ws.goToXY(2,2)<br>print("I'm at x:2 y:2")</code>
+                    <p>Output:</p>
+                    <code><br><br>&nbsp;&nbsp;I'm at x:2 y:2</code>
+                    <hr>
+                    <p><code>ws.getScreenHeigth()</code> and <code>ws.getScreenWidth()</code> commands:</p>
+                    <p>With this functions you can get console window height and width.</p>
+                    <p>Example:</p>
+                    <code>
+                        Number width = ws.getScreenWidth()
+                        Number height = ws.getScreenHeigth()
+                        print("Width of console window: " + @width)
+                        print("Height of console window: " + @height)
+                    </code>
+                </div>
+                <div id="i88">
+                    <h3>Random Numbers</h3><hr>
+                    <p>With this function you can generate random numbers using a minimun and a maximun number.</p>    
+                    <p>Example:</p>
+                    <code>print("Random number between 0 and 5: " + genRandom(0,5))</code>
+                </div>
+                <div id="i89">
+                    <h3>Boolean Functions</h3><hr>
+                    <p>This are some functions that are usseful for comparing variables and store the result as <code>0</code> false and <code>1</code> if true.</p>
+                    <code>
+                        // First we will compare a few Strings<br>
+                        String str1<br>
+                        String str2<br>
+                        String str3<br>
+                        setva("str1", "hello")<br>
+                        setva("str2", "bye")<br>
+                        setva("str3", "hello")<br>
+                        print("str1 == str3: " + ieq(str(str1), str(str3)))<br>
+                        print("str1 == str2: " + ieq(str(str1), str(str2)))<br>
+                        print("str1 != str2: " + ieq(str(str1), str(str2)))<br>
+                        print("str1 != str3: " + ieq(str(str1), str(str3)))<br>
+                        // And now we compare some numbers<br>
+                        Number num1<br>
+                        Number num2<br>
+                        Number num3<br>
+                        Number num4<br>
+                        setva("num1", "1")<br>
+                        setva("num2", "2")<br>
+                        setva("num3", "3")<br>
+                        setva("num4", "4")<br>
+                        print("num1 < num2: " + ilt(num(num1), num(num2)))<br>
+                        print("num1 <= num2: " + ilq(num(num1), num(num2)))<br>
+                        print("num4 > num3: " + ihi(num(num4), num(num3)))<br>
+                        print("num4 >= num3: " + ihq(num(num4), num(num3)))<br>
+                        print("num1 > num2: " + ihi(num(num1), num(num2)))<br>
+                        print("num1 >= num2: " + ihq(num(num1), num(num2)))<br>
+                        print("num4 < num3: " + ilt(num(num4), num(num3)))<br>
+                        print("num4 <= num3: " + ilq(num(num4), num(num3)))<br>
+                    </code>
+                    <p>Output:</p>
+                    <code>
+                        str1 == str3: 1<br>
+                        str1 == str2: 0<br>
+                        str1 != str2: 0<br>
+                        str1 != str3: 1<br>
+                        num1 < num2: 1<br>
+                        num1 <= num2: 1<br>
+                        num4 > num3: 1<br>
+                        num4 >= num3: 1<br>
+                        num1 > num2: 0<br>
+                        num1 >= num2: 0<br>
+                        num4 < num3: 0<br>
+                        num4 <= num3: 0<br>
+                    </code>
+                </div>
+                <div id="i90">
+                    <h3>Char Functions</h3><hr>
+                    <p>With this functions you can get a character from a charcode or a charcode from a character.</p>
+                    <p>Example:</p>
+                    <code>
+                        print("(char) 97: " + charC(97))<br>
+                        print("(int) a: " + charN("a"))
+                    </code>
+                </div>
+                <div id="i91">
+                    <h3>Arrays</h3><hr>
+                    <p style="padding: 12px;border-left:4px solid rgb(161, 0, 0);background-color: rgba(255, 0, 0, 0.538);"><b>Warning:</b> This function wasn't prepared to be fixed in this function. Wait until v_2.0</p>                     
+                </div>
+                <div id="i92">
+                    <h3>"import" Command</h3><hr>
+                    <p>If you're the kind of person that likes everything clear and in separeated on files, this must be your favourite function! With this function you can import variables, functions and run code from another file.</p>
+                    <p>Example:</p>
+                    <p><code>Main.epi</code> file:</p>
+                    <code>
+                        import("Sub.epi")<br>
+                        askForAuth()<br>
+                        print("Hello, " + str(username) + "!")
+                    </code>
+                    <p><code>Sub.epi</code> file:</p>
+                    <code>
+                        function askForAuth<br>
+                        String username<br>
+                        askForAuth.start()<br>
+                        printc("username: ")<br>
+                        setva("username", inp())<br>
+                        closeFunction()
+                    </code>
+                </div>
+                <div id="i93">
+                    <h3>Sleep Command</h3><hr>
+                    <p>With this function you can say to the program to wait some milliseconds to run the next line.</p>
+                    <p>Example:</p>
+                    <code>
+                        print("I'm back in two seconds. . .")<br>
+                        ws.sleep(2000)<br>
+                        print("I'm back!")
+                    </code>
+                    
+                    <p>Output:</p>
+                    <code>
+                        I'm back in two seconds. . .<br>
+                        I'm back!
+                    </code>
+                </div>
+                <div id="i94">
+                    <h3>Arguments</h3><hr>
+                    <p>Arguments are text added after calling the program. Example: <code>myprog imAnArgument</code></p>
+                    <p>In epi you can get the arguments and how the program is called by usign <code>arg</code> function.</p>
+                    <p>Example:</p>
+                    <code>
+                        print("How do you called the program: " + arg(0))<br>
+                        print("Argument 1 (filename): " + arg(1))<br>
+                        print("Argument 2: " + arg(2))<br>
+                    </code>
+                    <p>And compile the file like this: <code>epi myFile.epi "Hello World!"</code></p>
+                    <p>Output: </p>
+                    <code>
+                        How do you called the program: epi<br>
+                        Argument 1 (filename): myFile.epi<br>
+                        Argument 2: Hello World!
+                    </code>
+                    <p>If you don't add any argument, in this case argument 2, the output would be like this:</p>
+                    <code>
+                        How do you called the program: epi<br>
+                        Argument 1 (filename): myFile.epi<br>
+                        Argument 2: arg(2)
+                    </code>
+                </div>
+
                 <div id="i666">
                     <h3>Examples</h3><hr>
                     <p>Here you can view some games and programs that I made with epi.</p>
@@ -2157,7 +2924,7 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
         }
 
         document.querySelectorAll("#container div").forEach(div => div.style.display = "none");
-        document.getElementById("i1").style.display = "";
+        document.getElementById("i55").style.display = "";
         document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
         document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
         document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
