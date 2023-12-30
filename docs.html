@@ -2185,27 +2185,28 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
                     <p>You can use the <code>Number</code> keyword for creating a variable which contains numbers.</p>
                     <p><code>Number</code> Example:</p>
                     <code>Number myInt = 89<br>
-                        print("Old Value: " + @myInt)
-                        setva("myInt", "1")<br>
-                        print("myInt Value: " + num(myInt))</code>
+                        print("Old Value: " + @myInt)<br>
+                        myInt = 100<br>
+                        print("myInt new Value: " + @myInt)</code>
                     </div>
                 <div id="i70">
                     <h3>Variables - Strings</h3><hr>
                     <p>You can use the <code>String</code> keyword for creating a variable which contains text or a character.</p>
                     <p><code>String</code> Example:</p>
-                    <code>String myString<br>
-                        setva("myString", "Hello World!")<br>
-                        print("myString Value: " + str(myString))</code>
-                    <p><code>setva</code> function updates the value of the variable.</p>
+                    <code>String myString = "Hello World!"<br>
+                        print("Old myString Value: " + @myString)<br>
+                        myString = "Hello Universe!"<br>
+                        print("myString New Value: " + @myString)</code>
                 </div>
                 <div id="i71">
                     <h3>Variables - Booleans</h3><hr>
                     <p>You can use the <code>boolean</code> keyword for creating a variable which contains <code>0</code> or <code>1</code>.</p>
                     <p><code>boolean</code> Example:</p>
-                    <code>boolean myBoolean<br>
-                        setva("myBoolean", "1")<br>
-                        print("myBoolean Value: " + bol(myBoolean))</code>
-                    <p><code>setva</code> function updates the value of the variable.</p>
+                    <code>boolean myBoolean = 1<br>
+                        print("myBoolean Old Value: " + @myBoolean)<br>
+                        myBoolean = 0<br>
+                        print("myBoolean New Value: " + @myBoolean)
+                    </code>
                 </div>
                 <div id="i72">
                     <h3>Variables - Files</h3><hr>
@@ -2924,7 +2925,7 @@ a.closest("[data-ved]"))?D(f)||"":"";f=f||"";if(a.hasAttribute("jsname"))a=a.get
         }
 
         document.querySelectorAll("#container div").forEach(div => div.style.display = "none");
-        document.getElementById("i55").style.display = "";
+        document.getElementById("i1").style.display = "";
         document.querySelector('#i8 > blocktext > code:nth-child(4)').innerText = new Date().getMinutes()
         document.querySelector('#i8 > blocktext > code:nth-child(8)').innerText = new Date().getHours() +":" + new Date().getMinutes() + "." + new Date().getSeconds()
         document.querySelector('#i8 > blocktext > code:nth-child(12)').innerText = new Date().getDay() + 5 +"/" + (new Date().getMonth() + 1) + "/" + new Date().getFullYear()
